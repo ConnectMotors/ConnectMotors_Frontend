@@ -21,7 +21,6 @@ const GlobalStyles = createGlobalStyle`
     
     --branco: #ffffff;
     --preto: #000000;
-    --azul-claro: #B6B9FF;
 
     --cinza-background: #DDE0E2;
     --cinza-1 : #f3f3f3;
