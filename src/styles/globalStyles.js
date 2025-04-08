@@ -18,9 +18,11 @@ const GlobalStyles = createGlobalStyle`
 
   :root{
     --fonte-principal: "Poppins", Arial, sans-serif;
+    
     --branco: #ffffff;
     --preto: #000000;
     --azul-claro: #B6B9FF;
+
     --cinza-background: #DDE0E2;
     --cinza-1 : #f3f3f3;
     --cinza-2 : #d9d9d9;
@@ -28,6 +30,7 @@ const GlobalStyles = createGlobalStyle`
     --cinza-4 : #8c8c8c;
     --cinza-5 : #565656;
     --cinza-6 : #313131;
+
     --azul-1 : #cbd3d8;
     --azul-2 : #b6b9ff;
     --azul-3 : #6b6eff;
