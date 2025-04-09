@@ -8,6 +8,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
+    background-color: var(--cinza-background);
     font-family: var(--fonte-principal);
   }
 
