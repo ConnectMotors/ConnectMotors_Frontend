@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "./assets/LogoCM.svg";
 import IconeUsuario from "./assets/IconeUsuario.svg";
 import { 
@@ -52,7 +53,11 @@ function Header() {
   return (
     <HeaderBg>
       <HeaderContainer>
-        <Logo src={logo} alt="ConnectMotors" />
+
+        {/* Logo leva para a home */}
+        <Link to="/">
+          <Logo src={logo} alt="ConnectMotors" />
+        </Link>
         
         <NavMenu>
           {menuItems.map((item, index) => (
@@ -61,12 +66,12 @@ function Header() {
               onMouseEnter={() => setActiveDropdown(item.title)}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <NavLink href="#">{item.title}</NavLink>
+              <NavLink as="span">{item.title}</NavLink>
               
               {activeDropdown === item.title && (
                 <Dropdown>
                   {item.dropdown.map((subItem, subIndex) => (
-                    <DropdownItem key={subIndex} href={subItem.link}>
+                    <DropdownItem as={Link} to={subItem.link} key={subIndex}>
                       {subItem.label}
                     </DropdownItem>
                   ))}
@@ -76,9 +81,10 @@ function Header() {
           ))}
         </NavMenu>
 
-        <Entrar>
+        {/* Entrar leva para a rota de login */}
+        <Entrar as={Link} to="/auth/login">
           <img src={IconeUsuario} alt="" />
-          <a href="/">Entrar</a>
+          <span>Entrar</span>
         </Entrar>
 
       </HeaderContainer>
