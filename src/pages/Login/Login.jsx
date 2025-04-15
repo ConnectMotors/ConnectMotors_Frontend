@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   LoginBg,
   ContainerGeral,
@@ -60,8 +61,8 @@ export default function Login(){
             </div>
 
             <div className="cadastro">
-              <span>Não tem conta?</span>
-              <a href="/cadastro">Cadastre-se</a>
+            <span>Não tem conta?</span>
+            <Link to="/auth/register">Cadastre-se</Link>
             </div>
 
            <p className="termos">
