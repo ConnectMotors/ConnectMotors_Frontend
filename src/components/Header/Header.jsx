@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "./assets/LogoCM.svg";
 import IconeUsuario from "./assets/IconeUsuario.svg";
@@ -16,7 +16,10 @@ import {
 
 function Header() {
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [usuarioLogado, setUsuarioLogado] = useState(false);
+  const [username, setUsername] = useState('');
 
+  // Menu principal
   const menuItems = [
     {
       title: "Comprar",
@@ -50,11 +53,20 @@ function Header() {
     }
   ];
 
+  // Checa login ao carregar
+  useEffect(() => {
+    const token = sessionStorage.getItem('token');
+    const nomeUsuario = sessionStorage.getItem('username');
+
+    if (token) {
+      setUsuarioLogado(true);
+      setUsername(nomeUsuario);
+    }
+  }, []);
+
   return (
     <HeaderBg>
       <HeaderContainer>
-
-        {/* Logo leva para a home */}
         <Link to="/">
           <Logo src={logo} alt="ConnectMotors" />
         </Link>
@@ -81,12 +93,21 @@ function Header() {
           ))}
         </NavMenu>
 
-        {/* Entrar leva para a rota de login */}
-        <Entrar as={Link} to="/auth/login">
-          <img src={IconeUsuario} alt="" />
-          <span>Entrar</span>
-        </Entrar>
+        {/* Se não está logado, mostra botão "Entrar" */}
+        {!usuarioLogado && (
+          <Entrar as={Link} to="/auth/login">
+            <img src={IconeUsuario} alt="Ícone do usuário" />
+            <span>Entrar</span>
+          </Entrar>
+        )}
 
+        {/* Se está logado, mostra o nome do usuário */}
+        {usuarioLogado && username && (
+       <Entrar>
+         <img src={IconeUsuario} alt="Ícone do usuário" />
+         <span>{username}</span>
+      </Entrar>
+)}
       </HeaderContainer>
     </HeaderBg>
   );

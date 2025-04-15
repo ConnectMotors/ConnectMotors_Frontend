@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   LoginBg,
@@ -11,8 +11,37 @@ import {
 import imagemLogin from "./assets/imagemlogin.png"; 
 import IconeGoogle from "./assets/IconeGoogle.svg";
 import IconeFacebook from "./assets/IconeFacebook.svg";
+import axios from "axios";
 
 export default function Login(){
+       const [username, setUsername] = useState('');
+       const [password, setPassword] = useState('');
+
+       const submeterFormulario = (evento) => {
+          evento.preventDefault();
+          const usuario = {
+            username,
+            password
+          }
+
+          axios.post("http://localhost:8080/auth/login", usuario)
+          .then(resposta => {
+            sessionStorage.setItem('token', resposta.data.token)
+            sessionStorage.setItem('username', username);
+            setUsername('')      // no backend falta adicionar a lógica para logar com o email
+            setPassword('')
+            // console.log(resposta)
+          })
+          .catch(erro =>{
+            if(erro?.response?.data?.message){
+              alert(erro.response.data.message) // falta adicionar mensagem de erro no backend
+            }else{
+              alert("Aconteceu algo inesperado ao efetuar o seu login")
+            }
+            // console.log(erro)
+          })
+       }
+
   return (
     <LoginBg>
       <ContainerGeral>
@@ -27,12 +56,23 @@ export default function Login(){
 
             <Campo>
             <label htmlFor="email">Email</label>
-            <input type="email" id="email" placeholder="Digite seu email" />
+            <input 
+              type="email" 
+              id="email" 
+              placeholder="Digite seu email"
+              value={username}
+              onChange={(evento) => setUsername(evento.target.value)} 
+            />
             </Campo>
             
             <Campo>
             <label htmlFor="senha">Senha</label>
-            <input type="password" id="senha" placeholder="Digite sua senha" />
+            <input type="password" 
+                   id="senha" 
+                   placeholder="Digite sua senha" 
+                   value={password}
+                   onChange={(evento) => setPassword(evento.target.value)}
+            />
             </Campo>
 
             <div className="esqueciSenha">
@@ -40,7 +80,7 @@ export default function Login(){
               <a href="/recuperar">Clique aqui</a>
             </div>
 
-            <button type="submit">Entrar</button>
+            <button type="submit" onClick={submeterFormulario}>Entrar</button>
 
             <div className="separador">
               <hr />

@@ -37,6 +37,7 @@ export const NavMenu = styled.nav`
 
 export const NavItem = styled.div`
   position: relative;
+  cursor: pointer;
 `;
 
 export const NavLink = styled.a`
