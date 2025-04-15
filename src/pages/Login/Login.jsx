@@ -12,10 +12,13 @@ import imagemLogin from "./assets/imagemlogin.png";
 import IconeGoogle from "./assets/IconeGoogle.svg";
 import IconeFacebook from "./assets/IconeFacebook.svg";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function Login(){
        const [username, setUsername] = useState('');
        const [password, setPassword] = useState('');
+      
+       const navigate = useNavigate();
 
        const submeterFormulario = (evento) => {
           evento.preventDefault();
@@ -28,9 +31,11 @@ export default function Login(){
           .then(resposta => {
             sessionStorage.setItem('token', resposta.data.token)
             sessionStorage.setItem('username', username);
+            window.dispatchEvent(new Event("usuarioLogado"));
             setUsername('')      // no backend falta adicionar a lógica para logar com o email
             setPassword('')
-            // console.log(resposta)
+            navigate('/');
+            //  console.log(resposta)
           })
           .catch(erro =>{
             if(erro?.response?.data?.message){
@@ -38,7 +43,7 @@ export default function Login(){
             }else{
               alert("Aconteceu algo inesperado ao efetuar o seu login")
             }
-            // console.log(erro)
+            //  console.log(erro)
           })
        }
 

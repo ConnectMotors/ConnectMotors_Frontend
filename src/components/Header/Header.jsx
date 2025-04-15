@@ -53,16 +53,31 @@ function Header() {
     }
   ];
 
-  // Checa login ao carregar
-  useEffect(() => {
+ // Checa login ao carregar
+ useEffect(() => {
+  const atualizarUsuario = () => {
     const token = sessionStorage.getItem('token');
     const nomeUsuario = sessionStorage.getItem('username');
 
     if (token) {
       setUsuarioLogado(true);
       setUsername(nomeUsuario);
+    } else {
+      setUsuarioLogado(false);
+      setUsername('');
     }
-  }, []);
+  };
+
+  atualizarUsuario(); // chama ao montar
+
+  // escuta o evento "usuarioLogado"
+  window.addEventListener("usuarioLogado", atualizarUsuario);
+
+  // limpeza do listener
+  return () => {
+    window.removeEventListener("usuarioLogado", atualizarUsuario);
+  };
+}, []);
 
   return (
     <HeaderBg>
