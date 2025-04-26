@@ -17,7 +17,14 @@
         "telefone": "(51) 9 7125-1549",
         "valor": 60696,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 1
+        "id": 1,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "Curitiba",
@@ -37,7 +44,14 @@
         "telefone": "(11) 9 9423-1362",
         "valor": 37124,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 2
+        "id": 2,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "Goiânia",
@@ -57,7 +71,14 @@
         "telefone": "(85) 9 1845-1826",
         "valor": 16427,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 3
+        "id": 3,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "São Paulo",
@@ -77,7 +98,14 @@
         "telefone": "(48) 9 5597-1188",
         "valor": 103876,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 4
+        "id": 4,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "Salvador",
@@ -97,7 +125,14 @@
         "telefone": "(31) 9 4836-9730",
         "valor": 37031,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 5
+        "id": 5,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "Rio de Janeiro",
@@ -117,7 +152,14 @@
         "telefone": "(11) 9 6869-6199",
         "valor": 35248,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 6
+        "id": 6,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "Fortaleza",
@@ -137,7 +179,14 @@
         "telefone": "(51) 9 9454-7754",
         "valor": 20664,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 7
+        "id": 7,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "Belo Horizonte",
@@ -157,7 +206,14 @@
         "telefone": "(85) 9 6364-1750",
         "valor": 89962,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 8
+        "id": 8,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "Goiânia",
@@ -177,7 +233,14 @@
         "telefone": "(71) 9 7871-2461",
         "valor": 32420,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 9
+        "id": 9,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "Goiânia",
@@ -197,7 +260,14 @@
         "telefone": "(21) 9 9972-6760",
         "valor": 27195,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 10
+        "id": 10,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "Brasília",
@@ -217,7 +287,14 @@
         "telefone": "(48) 9 4956-5226",
         "valor": 110863,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 11
+        "id": 11,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "Rio de Janeiro",
@@ -237,7 +314,14 @@
         "telefone": "(85) 9 4077-5828",
         "valor": 18558,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 12
+        "id": 12,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "Belo Horizonte",
@@ -257,7 +341,14 @@
         "telefone": "(41) 9 4096-2057",
         "valor": 76935,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 13
+        "id": 13,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "Salvador",
@@ -277,7 +368,14 @@
         "telefone": "(62) 9 3459-6806",
         "valor": 52959,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 14
+        "id": 14,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "Belo Horizonte",
@@ -297,7 +395,14 @@
         "telefone": "(11) 9 2550-8434",
         "valor": 95965,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 15
+        "id": 15,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "Belo Horizonte",
@@ -317,7 +422,14 @@
         "telefone": "(51) 9 8645-9539",
         "valor": 94470,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 16
+        "id": 16,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "Brasília",
@@ -337,7 +449,14 @@
         "telefone": "(71) 9 3553-6910",
         "valor": 84883,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 17
+        "id": 17,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "Salvador",
@@ -357,7 +476,14 @@
         "telefone": "(61) 9 5337-2023",
         "valor": 119440,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 18
+        "id": 18,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "Curitiba",
@@ -377,7 +503,14 @@
         "telefone": "(62) 9 4914-6001",
         "valor": 100593,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 19
+        "id": 19,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "Fortaleza",
@@ -397,7 +530,14 @@
         "telefone": "(61) 9 4561-5553",
         "valor": 69320,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 20
+        "id": 20,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "Belo Horizonte",
@@ -417,7 +557,14 @@
         "telefone": "(85) 9 3944-4470",
         "valor": 61221,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 21
+        "id": 21,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "Goiânia",
@@ -437,7 +584,14 @@
         "telefone": "(48) 9 9663-3601",
         "valor": 70401,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 22
+        "id": 22,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "Florianópolis",
@@ -457,7 +611,14 @@
         "telefone": "(48) 9 3964-3394",
         "valor": 9907,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 23
+        "id": 23,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "Salvador",
@@ -477,7 +638,14 @@
         "telefone": "(85) 9 5893-2216",
         "valor": 19890,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 24
+        "id": 24,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "Rio de Janeiro",
@@ -497,7 +665,14 @@
         "telefone": "(11) 9 3905-6675",
         "valor": 9164,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 25
+        "id": 25,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "Fortaleza",
@@ -517,7 +692,14 @@
         "telefone": "(61) 9 4922-3063",
         "valor": 56922,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 26
+        "id": 26,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "Porto Alegre",
@@ -537,7 +719,14 @@
         "telefone": "(62) 9 2602-3081",
         "valor": 53085,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 27
+        "id": 27,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "Salvador",
@@ -557,7 +746,14 @@
         "telefone": "(48) 9 5094-1323",
         "valor": 45746,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 28
+        "id": 28,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "Fortaleza",
@@ -577,7 +773,14 @@
         "telefone": "(61) 9 9918-5130",
         "valor": 61703,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 29
+        "id": 29,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "Curitiba",
@@ -597,7 +800,14 @@
         "telefone": "(85) 9 1038-7572",
         "valor": 21664,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 30
+        "id": 30,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "Curitiba",
@@ -617,7 +827,14 @@
         "telefone": "(71) 9 4950-9180",
         "valor": 50710,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 31
+        "id": 31,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "São Paulo",
@@ -637,7 +854,14 @@
         "telefone": "(51) 9 4564-6198",
         "valor": 27026,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 32
+        "id": 32,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "Curitiba",
@@ -657,7 +881,14 @@
         "telefone": "(85) 9 6176-5445",
         "valor": 65250,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 33
+        "id": 33,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "São Paulo",
@@ -677,7 +908,14 @@
         "telefone": "(31) 9 5331-5932",
         "valor": 28334,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 34
+        "id": 34,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "Belo Horizonte",
@@ -697,7 +935,14 @@
         "telefone": "(11) 9 7578-6707",
         "valor": 12331,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 35
+        "id": 35,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "Belo Horizonte",
@@ -717,7 +962,14 @@
         "telefone": "(61) 9 8103-9491",
         "valor": 26251,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 36
+        "id": 36,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "Porto Alegre",
@@ -737,7 +989,14 @@
         "telefone": "(71) 9 3470-6030",
         "valor": 54263,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 37
+        "id": 37,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "Fortaleza",
@@ -757,7 +1016,14 @@
         "telefone": "(71) 9 2925-7862",
         "valor": 16982,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 38
+        "id": 38,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "Brasília",
@@ -777,7 +1043,14 @@
         "telefone": "(11) 9 4860-2164",
         "valor": 37802,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 39
+        "id": 39,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     },
     {
         "cidade": "Brasília",
@@ -797,6 +1070,13 @@
         "telefone": "(21) 9 5316-6877",
         "valor": 23866,
         "descricao": "Veículo em ótimo estado de conservação.",
-        "id": 40
+        "id": 40,
+        "fotoPrincipal": "fotos/fotoPrincipal.png",
+        "fotoSecundaria": [
+            "fotos/fotoSecundaria1.png",
+            "fotos/fotoSecundaria2.png",
+            "fotos/fotoSecundaria3.png",
+            "fotos/fotoSecundaria4.png"
+        ]
     }
 ]
