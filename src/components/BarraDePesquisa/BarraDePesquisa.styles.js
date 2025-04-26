@@ -31,6 +31,7 @@ export const CampoBusca = styled.div`
 
 `;
 
+
 export const IconeFiltro = styled.img`
   height: 40px;
   width: auto;

@@ -1,15 +1,8 @@
-import { Teste } from "./Home.styles"
+import BarraDePesquisa from "../../components/BarraDePesquisa/BarraDePesquisa"
 
-export default function Home(){
-    return(
-
-        <div>
-            <img src="" alt="" />
-            <h1>voce está na home</h1>
-            <h1>voce está na home</h1>
-            <h1>voce está na home</h1>
-            <h1>voce está na home</h1>
-        </div>
+export default function Home() {
+    return (
+        <BarraDePesquisa />
     )
 
 }
