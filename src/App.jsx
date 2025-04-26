@@ -1,11 +1,12 @@
-import CardAnuncio from "./components/Card-anuncio/Card-anuncio";
+import React from "react";
+import ListagemVeiculos from "./components/ListagemVeiculos/ListagemVeiculos";
 
 function App() {
   return (
     <>
-      <CardAnuncio />
+      <ListagemVeiculos />
     </>
-  )
+  );
 }
 
 export default App;

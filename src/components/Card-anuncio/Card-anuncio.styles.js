@@ -33,7 +33,7 @@ export const Titulo = styled.h3`
   margin-bottom: 3px;
 `;
 
-export const Descricao = styled.p`
+export const Detalhes = styled.p`
   margin-bottom: 57px;
   font-size: 0.875rem;
   color: var(--cinza-5);
