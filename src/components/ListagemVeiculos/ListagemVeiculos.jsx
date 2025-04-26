@@ -6,7 +6,7 @@ export default function ListagemVeiculos() {
   const [veiculos, setVeiculos] = useState([]);
 
   useEffect(() => {
-    fetch('/veiculos_exemplo.json')
+    fetch('/Data/veiculos_exemplo.json')
       .then(response => response.json())
       .then(data => setVeiculos(data))
       .catch(error => console.error('Erro ao carregar veículos:', error));
