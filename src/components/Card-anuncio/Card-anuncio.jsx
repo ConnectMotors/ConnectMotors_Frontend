@@ -1,5 +1,4 @@
 import React from "react";
-import imagem_capa from "./assets/imagem_capa.png";
 import iconeLoc from "./assets/iconeLoc.svg";
 import divisoria from "./assets/divisoria.svg";
 import {
@@ -12,11 +11,11 @@ import {
   Localizacao,
 } from "./Card-anuncio.styles";
 
-export default function CardAnuncio({ nomeVeiculo, fabricante, valor, anoFabricacao, anoModelo, km, cidade, estado, motor, versao, combustivel }) {
+export default function CardAnuncio({ nomeVeiculo, fabricante, valor, anoFabricacao, anoModelo, km, cidade, estado, motor, versao, combustivel, fotoPrincipal }) {
   return (
     <Card>
       <div>
-        <img src={imagem_capa} alt="imagem do post" />
+        <img src={fotoPrincipal} alt="imagem do post" />
       </div>
       <Conteudo>
         <Titulo>{fabricante} {nomeVeiculo}</Titulo> 
