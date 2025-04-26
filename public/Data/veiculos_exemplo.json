@@ -3,7 +3,7 @@
     "cidade": "São Paulo",
     "estado": "SP",
     "cep": "57500-337",
-    "categoria": "Carro",
+    "categoria": "Sedan",
     "fabricante": "Honda",
     "anoFabricacao": 2021,
     "anoModelo": 2021,
@@ -24,13 +24,14 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Carro"
   },
   {
     "cidade": "Curitiba",
     "estado": "PR",
     "cep": "95584-905",
-    "categoria": "Carro",
+    "categoria": "Sedan",
     "fabricante": "Chevrolet",
     "anoFabricacao": 2017,
     "anoModelo": 2017,
@@ -51,13 +52,14 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Carro"
   },
   {
     "cidade": "Goiânia",
     "estado": "GO",
     "cep": "37609-746",
-    "categoria": "Carro",
+    "categoria": "Hatch",
     "fabricante": "Chevrolet",
     "anoFabricacao": 2012,
     "anoModelo": 2013,
@@ -78,13 +80,14 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Carro"
   },
   {
     "cidade": "São Paulo",
     "estado": "SP",
     "cep": "79837-277",
-    "categoria": "Carro",
+    "categoria": "Hatch",
     "fabricante": "Fiat",
     "anoFabricacao": 2019,
     "anoModelo": 2020,
@@ -105,13 +108,14 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Carro"
   },
   {
     "cidade": "Salvador",
     "estado": "BA",
     "cep": "38368-222",
-    "categoria": "Carro",
+    "categoria": "Hatch",
     "fabricante": "Fiat",
     "anoFabricacao": 2018,
     "anoModelo": 2019,
@@ -132,13 +136,14 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Carro"
   },
   {
     "cidade": "Rio de Janeiro",
     "estado": "RJ",
     "cep": "22789-182",
-    "categoria": "Carro",
+    "categoria": "Sedan",
     "fabricante": "Ford",
     "anoFabricacao": 2014,
     "anoModelo": 2015,
@@ -159,13 +164,14 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Carro"
   },
   {
     "cidade": "Fortaleza",
     "estado": "CE",
     "cep": "94017-251",
-    "categoria": "Carro",
+    "categoria": "Hatch",
     "fabricante": "Volkswagen",
     "anoFabricacao": 2022,
     "anoModelo": 2022,
@@ -186,13 +192,14 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Carro"
   },
   {
     "cidade": "Belo Horizonte",
     "estado": "MG",
     "cep": "55407-334",
-    "categoria": "Carro",
+    "categoria": "Hatch",
     "fabricante": "Chevrolet",
     "anoFabricacao": 2011,
     "anoModelo": 2011,
@@ -213,13 +220,14 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Carro"
   },
   {
     "cidade": "Goiânia",
     "estado": "GO",
     "cep": "62884-378",
-    "categoria": "Carro",
+    "categoria": "Sedan",
     "fabricante": "Chevrolet",
     "anoFabricacao": 2011,
     "anoModelo": 2011,
@@ -240,13 +248,14 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Carro"
   },
   {
     "cidade": "Goiânia",
     "estado": "GO",
     "cep": "24163-637",
-    "categoria": "Carro",
+    "categoria": "Hatch",
     "fabricante": "Toyota",
     "anoFabricacao": 2019,
     "anoModelo": 2019,
@@ -267,13 +276,14 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Carro"
   },
   {
     "cidade": "Brasília",
     "estado": "DF",
     "cep": "67281-642",
-    "categoria": "Carro",
+    "categoria": "Hatch",
     "fabricante": "Chevrolet",
     "anoFabricacao": 2017,
     "anoModelo": 2018,
@@ -294,13 +304,14 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Carro"
   },
   {
     "cidade": "Rio de Janeiro",
     "estado": "RJ",
     "cep": "28923-229",
-    "categoria": "Carro",
+    "categoria": "Hatch",
     "fabricante": "Renault",
     "anoFabricacao": 2015,
     "anoModelo": 2015,
@@ -321,13 +332,14 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Carro"
   },
   {
     "cidade": "Belo Horizonte",
     "estado": "MG",
     "cep": "47666-194",
-    "categoria": "Carro",
+    "categoria": "Hatch",
     "fabricante": "Fiat",
     "anoFabricacao": 2015,
     "anoModelo": 2016,
@@ -348,13 +360,14 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Carro"
   },
   {
     "cidade": "Salvador",
     "estado": "BA",
     "cep": "31263-657",
-    "categoria": "Carro",
+    "categoria": "Sedan",
     "fabricante": "Chevrolet",
     "anoFabricacao": 2023,
     "anoModelo": 2024,
@@ -375,13 +388,14 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Carro"
   },
   {
     "cidade": "Belo Horizonte",
     "estado": "MG",
     "cep": "49268-311",
-    "categoria": "Carro",
+    "categoria": "Hatch",
     "fabricante": "Volkswagen",
     "anoFabricacao": 2013,
     "anoModelo": 2014,
@@ -402,13 +416,14 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Carro"
   },
   {
     "cidade": "Belo Horizonte",
     "estado": "MG",
     "cep": "28606-690",
-    "categoria": "Carro",
+    "categoria": "Hatch",
     "fabricante": "Hyundai",
     "anoFabricacao": 2021,
     "anoModelo": 2021,
@@ -429,13 +444,14 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Carro"
   },
   {
     "cidade": "Brasília",
     "estado": "DF",
     "cep": "15947-964",
-    "categoria": "Carro",
+    "categoria": "Hatch",
     "fabricante": "Chevrolet",
     "anoFabricacao": 2014,
     "anoModelo": 2015,
@@ -456,13 +472,14 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Carro"
   },
   {
     "cidade": "Salvador",
     "estado": "BA",
     "cep": "78597-348",
-    "categoria": "Carro",
+    "categoria": "Hatch",
     "fabricante": "Toyota",
     "anoFabricacao": 2013,
     "anoModelo": 2014,
@@ -483,13 +500,14 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Carro"
   },
   {
     "cidade": "Curitiba",
     "estado": "PR",
     "cep": "50653-962",
-    "categoria": "Carro",
+    "categoria": "Hatch",
     "fabricante": "Volkswagen",
     "anoFabricacao": 2015,
     "anoModelo": 2015,
@@ -510,13 +528,14 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Carro"
   },
   {
     "cidade": "Fortaleza",
     "estado": "CE",
     "cep": "88148-791",
-    "categoria": "Carro",
+    "categoria": "Hatch",
     "fabricante": "Honda",
     "anoFabricacao": 2022,
     "anoModelo": 2022,
@@ -537,7 +556,8 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Carro"
   },
   {
     "cidade": "Belo Horizonte",
@@ -564,7 +584,8 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Moto"
   },
   {
     "cidade": "Goiânia",
@@ -591,7 +612,8 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Moto"
   },
   {
     "cidade": "Florianópolis",
@@ -618,7 +640,8 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Moto"
   },
   {
     "cidade": "Salvador",
@@ -645,7 +668,8 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Moto"
   },
   {
     "cidade": "Rio de Janeiro",
@@ -672,7 +696,8 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Moto"
   },
   {
     "cidade": "Fortaleza",
@@ -699,7 +724,8 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Moto"
   },
   {
     "cidade": "Porto Alegre",
@@ -726,7 +752,8 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Moto"
   },
   {
     "cidade": "Salvador",
@@ -753,7 +780,8 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Moto"
   },
   {
     "cidade": "Fortaleza",
@@ -763,7 +791,7 @@
     "fabricante": "Kawasaki",
     "anoFabricacao": 2021,
     "anoModelo": 2021,
-    "nomeVeiculo": "Monster 797",
+    "nomeVeiculo": "Monster",
     "versao": "Exclusive",
     "km": 51579,
     "motor": "500cc",
@@ -780,7 +808,8 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Moto"
   },
   {
     "cidade": "Curitiba",
@@ -807,7 +836,8 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Moto"
   },
   {
     "cidade": "Curitiba",
@@ -834,7 +864,8 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Moto"
   },
   {
     "cidade": "São Paulo",
@@ -861,14 +892,15 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Moto"
   },
   {
     "cidade": "Curitiba",
     "estado": "PR",
     "cep": "44489-118",
     "categoria": "Moto",
-    "fabricante": "Harley-Davidson",
+    "fabricante": "Honda",
     "anoFabricacao": 2013,
     "anoModelo": 2013,
     "nomeVeiculo": "Factor 150",
@@ -888,7 +920,8 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Moto"
   },
   {
     "cidade": "São Paulo",
@@ -915,7 +948,8 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Moto"
   },
   {
     "cidade": "Belo Horizonte",
@@ -942,7 +976,8 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Moto"
   },
   {
     "cidade": "Belo Horizonte",
@@ -969,14 +1004,15 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Moto"
   },
   {
     "cidade": "Porto Alegre",
     "estado": "RS",
     "cep": "40155-729",
     "categoria": "Moto",
-    "fabricante": "Harley-Davidson",
+    "fabricante": "Honda",
     "anoFabricacao": 2014,
     "anoModelo": 2015,
     "nomeVeiculo": "G 310 R",
@@ -996,7 +1032,8 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Moto"
   },
   {
     "cidade": "Fortaleza",
@@ -1023,7 +1060,8 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Moto"
   },
   {
     "cidade": "Brasília",
@@ -1050,7 +1088,8 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Moto"
   },
   {
     "cidade": "Brasília",
@@ -1077,6 +1116,7 @@
       "https://i.imgur.com/7r2mXXV.png",
       "https://i.imgur.com/2dH7dIN.png",
       "https://i.imgur.com/E4uIKNE.png"
-    ]
+    ],
+    "tipoVeiculo": "Moto"
   }
 ]
