@@ -29,6 +29,8 @@ export default function ListagemVeiculos() {
             motor={veiculo.motor}
             versao={veiculo.versao}
             combustivel={veiculo.combustivel}
+            fotoPrincipal={veiculo.fotoPrincipal}
+            fotoSecundaria={veiculo.fotoSecundaria}
           />
         </li>
       ))}
