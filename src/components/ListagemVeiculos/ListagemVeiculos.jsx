@@ -1,17 +1,7 @@
-import { useEffect, useState } from "react";
-import CardAnuncio from "../Card-anuncio/Card-anuncio";
 import { ListaCards } from "./ListagemVeiculos.styles";
+import CardAnuncio from "../Card-anuncio/Card-anuncio";
 
-export default function ListagemVeiculos() {
-  const [veiculos, setVeiculos] = useState([]);
-
-  useEffect(() => {
-    fetch('/Data/veiculos_exemplo.json')
-      .then(response => response.json())
-      .then(data => setVeiculos(data))
-      .catch(error => console.error('Erro ao carregar veículos:', error));
-  }, []);
-
+export default function ListagemVeiculos({ veiculos }) {
   return (
     <ListaCards className="lista-cards">
       {veiculos.map((veiculo, index) => (
