@@ -1,12 +1,13 @@
 import { ListaCards } from "./ListagemVeiculos.styles";
 import CardAnuncio from "../Card-anuncio/Card-anuncio";
 
-export default function ListagemVeiculos({ veiculos }) {
+export default function ListagemVeiculos({ veiculos = []}) {
   return (
     <ListaCards className="lista-cards">
       {veiculos.map((veiculo, index) => (
         <li key={index}>
-          <CardAnuncio 
+          <CardAnuncio
+            id={veiculo.id} 
             nomeVeiculo={veiculo.nomeVeiculo}
             descricao={veiculo.descricao}
             valor={veiculo.valor}
