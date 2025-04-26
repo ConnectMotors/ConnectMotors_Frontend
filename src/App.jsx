@@ -1,12 +1,15 @@
-import BarraDePesquisa from "./components/BarraDePesquisa/BarraDePesquisa";
-import React from "react";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import AppRoutes from "./routes/AppRoutes";
 
 function App() {
   return (
     <>
-      <BarraDePesquisa />
+      <Header />
+      <AppRoutes />
+      <Footer />
     </>
-  )
+  );
 }
 
 export default App;
