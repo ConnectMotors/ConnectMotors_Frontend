@@ -1,11 +1,16 @@
-import CardAnuncio from "./components/Card-anuncio/Card-anuncio";
+import React from "react";
+import AppRoutes from "./routes/AppRoutes";
+import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
 
 function App() {
   return (
     <>
-      <CardAnuncio />
+      <Header />
+      <AppRoutes />
+      <Footer />
     </>
-  )
+  );
 }
 
 export default App;
