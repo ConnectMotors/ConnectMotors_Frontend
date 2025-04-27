@@ -1,6 +1,7 @@
 import React from "react";
 import iconeLoc from "./assets/iconeLoc.svg";
 import divisoria from "./assets/divisoria.svg";
+import { Link } from "react-router-dom";
 import {
   Card,
   Conteudo,
@@ -11,8 +12,9 @@ import {
   Localizacao,
 } from "./Card-anuncio.styles";
 
-export default function CardAnuncio({ nomeVeiculo, fabricante, valor, anoFabricacao, anoModelo, km, cidade, estado, motor, versao, combustivel, fotoPrincipal }) {
+export default function CardAnuncio({id, nomeVeiculo, fabricante, valor, anoFabricacao, anoModelo, km, cidade, estado, motor, versao, combustivel, fotoPrincipal }) {
   return (
+    <Link to={`/anuncio/${id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
     <Card>
       <div>
         <img src={fotoPrincipal} alt="imagem do post" />
@@ -32,5 +34,6 @@ export default function CardAnuncio({ nomeVeiculo, fabricante, valor, anoFabrica
         </Localizacao>
       </Conteudo>
     </Card>
-  );
+  </Link>
+);
 }
