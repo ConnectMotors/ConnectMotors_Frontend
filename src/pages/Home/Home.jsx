@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import OfertaDestaque from "../../components/OfertaDestaque/OfertaDestaque"
 import banner from "./assets/banner.png"
 import {Banner} from "./Home.styles"
+import LojasParceiras from '../../components/LojasParceiras/LojasParceiras';
 
 export default function Home(){
 
@@ -19,6 +20,9 @@ export default function Home(){
             <Banner src={banner} alt="" />
            
             <OfertaDestaque veiculos={veiculos} />
+
+            <LojasParceiras />
+            
         </div>
     )
 
