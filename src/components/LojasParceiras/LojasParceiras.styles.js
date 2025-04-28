@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const LojasParceirasBG = styled.section`
-  position: relative;
   padding: 40px 0;
   display: flex;
   justify-content: center;
