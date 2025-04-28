@@ -3,6 +3,7 @@ import OfertaDestaque from "../../components/OfertaDestaque/OfertaDestaque"
 import banner from "./assets/banner.png"
 import {Banner} from "./Home.styles"
 import LojasParceiras from '../../components/LojasParceiras/LojasParceiras';
+import Servicos from '../../components/Servicos/Servicos';
 
 export default function Home(){
 
@@ -20,6 +21,8 @@ export default function Home(){
             <Banner src={banner} alt="" />
            
             <OfertaDestaque veiculos={veiculos} />
+
+            <Servicos />
 
             <LojasParceiras />
             

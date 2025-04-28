@@ -87,7 +87,7 @@ export const NavButton = styled.button`
     right: -50px;
   `}
 
-  @media (max-width: 768px) {
+  @media (max-width: 1300px) {
     ${props => props.left && `
       left: -30px;
     `}
