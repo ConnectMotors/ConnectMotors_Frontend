@@ -30,6 +30,7 @@ export const Topo = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  margin-bottom: 60px;
 `;
 
 export const Titulo = styled.h2`
@@ -37,23 +38,17 @@ export const Titulo = styled.h2`
   font-weight: 700;
 `;
 
-export const Indicators = styled.div`
+export const CarrosselWrapper = styled.div`
+  position: relative;
+  width: 100%;
   display: flex;
-  gap: 8px;
-`;
-
-export const Dot = styled.div`
-  width: ${({ active }) => (active ? '16px' : '8px')};
-  height: 8px;
-  border-radius: 999px;
-  background-color: ${({ active }) => (active ? '#2563eb' : '#ccc')};
-  transition: all 0.3s ease;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const Carrossel = styled.div`
   width: 100%;
-  overflow: hidden;
-  position: relative;
+  overflow: visible;
 `;
 
 export const Grid = styled.div`
@@ -64,7 +59,6 @@ export const Grid = styled.div`
   scroll-padding-left: 10px;
   padding-bottom: 10px;
   scrollbar-width: none;
-  /* scroll-behavior: smooth; */
 
   &::-webkit-scrollbar {
     display: none;
@@ -87,11 +81,18 @@ export const NavButton = styled.button`
   padding: 6px;
 
   ${props => props.left && `
-    left: 0;
-    margin-left: 10px;
+    left: -50px;
   `}
   ${props => props.right && `
-    right: 0;
-    margin-right: 10px;
+    right: -50px;
   `}
+
+  @media (max-width: 768px) {
+    ${props => props.left && `
+      left: -30px;
+    `}
+    ${props => props.right && `
+      right: -30px;
+    `}
+  }
 `;
