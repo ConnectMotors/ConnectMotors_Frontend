@@ -30,6 +30,7 @@ export const NossosServicos = styled.div`
   flex-wrap: wrap;
   gap: 20px;
   width: 100%;
+  justify-content: center;
 `;
 
 export const Card = styled.div`

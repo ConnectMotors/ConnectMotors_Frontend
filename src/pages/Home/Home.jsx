@@ -4,6 +4,7 @@ import banner from "./assets/banner.png"
 import {Banner} from "./Home.styles"
 import LojasParceiras from '../../components/LojasParceiras/LojasParceiras';
 import Servicos from '../../components/Servicos/Servicos';
+import EncontrarVeiculo from '../../components/EncontrarVeiculo/EncontrarVeiculo';
 
 export default function Home(){
 
@@ -21,6 +22,8 @@ export default function Home(){
             <Banner src={banner} alt="" />
            
             <OfertaDestaque veiculos={veiculos} />
+
+            <EncontrarVeiculo />
 
             <Servicos />
 
