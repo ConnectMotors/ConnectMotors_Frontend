@@ -6,8 +6,8 @@ export default function ListagemVeiculos({ veiculos = []}) {
     <ListaCards className="lista-cards">
       {veiculos.map((veiculo, index) => (
         <li key={index}>
-          <CardAnuncio 
-            id={veiculo.id}
+          <CardAnuncio
+            id={veiculo.id} 
             nomeVeiculo={veiculo.nomeVeiculo}
             descricao={veiculo.descricao}
             valor={veiculo.valor}

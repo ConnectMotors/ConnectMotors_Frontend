@@ -13,7 +13,7 @@ export const HeaderContainer = styled.div`
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 30px 0px;
 
@@ -54,45 +54,52 @@ export const Dropdown = styled.div`
   position: absolute;
   min-width: 200px;
   left: -15px;
+  background: var(--branco);
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 `;
 
 export const DropdownItem = styled.a`
   display: block;
+  width: 100%;
   padding: 0.5rem 1rem;
   font-size: 0.875rem;
   transition: all 0.3s ease;
-  
+  text-align: left;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+
   &:hover {
     background-color: var(--cinza-1);
   }
 `;
 
 export const Entrar = styled.div`
-    display: flex;
-    align-items: center;
-    column-gap: 4px;
+  display: flex;
+  align-items: center;
+  column-gap: 4px;
 
-    a{
-        font-size: 1.125rem;
-        font-weight: 600; 
+  span {
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+
+  @media(max-width: 1400px){
+    span {
+      font-size: 1rem;
     }
 
-
-    @media(max-width: 1400px){
-        a{
-            font-size: 1rem;
-        }
-
-        img{
-            width: 30px;
-        }
+    img {
+      width: 30px;
+    }
   }
-`
+`;
 
 export const Logo = styled.img`
-
-  @media(max-width:1400px){
+  @media(max-width: 1400px){
     width: 250px;
   }
-
-`
+`;

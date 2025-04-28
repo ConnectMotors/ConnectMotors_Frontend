@@ -3,6 +3,7 @@ import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import Cadastro from "../pages/Cadastro/Cadastro";
 import Comprar from "../pages/Comprar/Comprar";
+import AnuncioDetalhado from "../pages/AnuncioDetalhado/AnuncioDetalhado";
 
 function AppRoutes() {
   return (
@@ -12,8 +13,8 @@ function AppRoutes() {
       <Route path="/auth/register" element={<Cadastro />} />
       <Route path="/comprar" element={<Comprar />} />
       <Route path="/comprar/:tipo" element={<Comprar />} /> 
+      <Route path="/anuncio/:id" element={<AnuncioDetalhado />} />
     </Routes>
   );
 }
-
 export default AppRoutes;

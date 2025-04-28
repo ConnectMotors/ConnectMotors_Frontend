@@ -19,15 +19,12 @@ function Header() {
   const [usuarioLogado, setUsuarioLogado] = useState(false);
   const [username, setUsername] = useState('');
 
-  // Menu principal
   const menuItems = [
     {
       title: "Comprar",
       dropdown: [
-        { label: "Carros Usados", link: "/" },
-        { label: "Carros Novos", link: "/" },
-        { label: "Motos Usadas", link: "/" },
-        { label: "Motos Novas", link: "/" }
+        { label: "Comprar carros", link: "/" },
+        { label: "Comprar motos", link: "/" },
       ]
     },
     {
@@ -53,31 +50,27 @@ function Header() {
     }
   ];
 
- // Checa login ao carregar
- useEffect(() => {
-  const atualizarUsuario = () => {
-    const token = sessionStorage.getItem('token');
-    const nomeUsuario = sessionStorage.getItem('username');
+  useEffect(() => {
+    const atualizarUsuario = () => {
+      const token = sessionStorage.getItem('token');
+      const nomeUsuario = sessionStorage.getItem('username');
 
-    if (token) {
-      setUsuarioLogado(true);
-      setUsername(nomeUsuario);
-    } else {
-      setUsuarioLogado(false);
-      setUsername('');
-    }
-  };
+      if (token) {
+        setUsuarioLogado(true);
+        setUsername(nomeUsuario);
+      } else {
+        setUsuarioLogado(false);
+        setUsername('');
+      }
+    };
 
-  atualizarUsuario(); // chama ao montar
+    atualizarUsuario();
+    window.addEventListener("usuarioLogado", atualizarUsuario);
 
-  // escuta o evento "usuarioLogado"
-  window.addEventListener("usuarioLogado", atualizarUsuario);
-
-  // limpeza do listener
-  return () => {
-    window.removeEventListener("usuarioLogado", atualizarUsuario);
-  };
-}, []);
+    return () => {
+      window.removeEventListener("usuarioLogado", atualizarUsuario);
+    };
+  }, []);
 
   return (
     <HeaderBg>
@@ -106,23 +99,45 @@ function Header() {
               )}
             </NavItem>
           ))}
+
+          {/* Se usuário logado, mostra nome com dropdown */}
+          {usuarioLogado && username && (
+            <NavItem
+              onMouseEnter={() => setActiveDropdown('usuario')}
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
+              <Entrar as="div">
+                <img src={IconeUsuario} alt="Ícone do usuário" />
+                <span>{username}</span>
+              </Entrar>
+
+              {activeDropdown === 'usuario' && (
+                <Dropdown>
+                  <DropdownItem as={Link} to="/minha-conta">Minha Conta</DropdownItem>
+                  <DropdownItem as={Link} to="/meus-anuncios">Meus Anúncios</DropdownItem>
+                  <DropdownItem as={Link} to="/chats">Chats</DropdownItem>
+                  <DropdownItem
+                    as="button"
+                    onClick={() => {
+                      sessionStorage.clear();
+                      window.location.href = '/';
+                    }}
+                  >
+                    Sair
+                  </DropdownItem>
+                </Dropdown>
+              )}
+            </NavItem>
+          )}
+
+          {/* Se não logado, botão Entrar */}
+          {!usuarioLogado && (
+            <Entrar as={Link} to="/auth/login">
+              <img src={IconeUsuario} alt="Ícone do usuário" />
+              <span>Entrar</span>
+            </Entrar>
+          )}
         </NavMenu>
-
-        {/* Se não está logado, mostra botão "Entrar" */}
-        {!usuarioLogado && (
-          <Entrar as={Link} to="/auth/login">
-            <img src={IconeUsuario} alt="Ícone do usuário" />
-            <span>Entrar</span>
-          </Entrar>
-        )}
-
-        {/* Se está logado, mostra o nome do usuário */}
-        {usuarioLogado && username && (
-       <Entrar>
-         <img src={IconeUsuario} alt="Ícone do usuário" />
-         <span>{username}</span>
-      </Entrar>
-)}
       </HeaderContainer>
     </HeaderBg>
   );
