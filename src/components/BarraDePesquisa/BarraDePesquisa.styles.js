@@ -2,10 +2,11 @@ import styled from "styled-components";
 
 
 export const ContainerBg = styled.div`
-width: 800px;
-background-color: var(--cinza-4);
+ width: 100%;
+ max-width: 800px;
+background-color: var(--branco);
 margin: 0 auto;
-border-radius: 20px;
+border-radius: 10px;
 `;
 
 export const Container = styled.div`
@@ -26,8 +27,8 @@ export const CampoBusca = styled.div`
   align-items: center;
   background-color: var(--cinza-2);
   border-radius: 1.5rem;
-  padding: 0.5rem 1rem; /* Menor padding vertical */
-  height: 40px; /* Altura controlada */
+  padding: 0.5rem 1rem; 
+  height: 40px; 
 
 `;
 
@@ -38,7 +39,26 @@ export const IconeFiltro = styled.img`
   margin-left: 10px;
   cursor: pointer;
 `;
+export const Wrapper = styled.div`
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
+  .dropdownFiltros {
+    position: absolute;
+    top: 73%;
+    width: 100%;
+    background: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 0 2rem; 
+    z-index: 100;
+  }
+`;
 export const Input = styled.input`
   border: none;
   background: transparent;
@@ -68,7 +88,7 @@ export const FiltrosWrapper = styled.div`
   padding: 16px 20px; /* Reduzi o padding */
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1); /* Sombra mais sutil */
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1); 
 `;
 export const LinhaDivisoria = styled.hr`
   border: none;
@@ -217,14 +237,6 @@ export const Acoes = styled.div`
   }
 `;
 
-export const BotaoLimpar = styled.button`
-  background: none;
-  font-weight: 600;
-  font-size: 14px;
-  border: none;
-  color: var(--cinza-3);
-  cursor: pointer;
-`;
 
 export const BotaoCancelar = styled.button`
   background: none;

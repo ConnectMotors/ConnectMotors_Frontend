@@ -11,9 +11,9 @@ function AppRoutes() {
       <Route path="/auth/login" element={<Login />} />
       <Route path="/auth/register" element={<Cadastro />} />
       <Route path="/comprar" element={<Comprar />} />
+      <Route path="/comprar/:tipo" element={<Comprar />} /> 
     </Routes>
   );
 }
 
 export default AppRoutes;
-

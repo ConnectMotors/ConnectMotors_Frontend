@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
+import { useFiltros } from "../../context/FiltrosContext";
+
 import Lupa from './assets/lupaPesquisa.svg';
 import FiltroIcone from './assets/filtroIcone.svg';
 import HatchIcone from './assets/hatchIcone.svg';
@@ -6,31 +9,31 @@ import SedanIcone from './assets/sedanIcone.svg';
 import SuvIcone from './assets/suvIcone.svg';
 import PicapeIcone from './assets/picapeIcone.svg';
 import MotoIcone from './assets/motoIcone.svg';
-import Filtragem from '../Filtragem/Filtragem';
-import { useNavigate } from 'react-router-dom';
-import { useFiltros } from "../../context/FiltrosContext";
+import FiltragemHome from '../Filtragem/FiltragemHome';
+
 import {
     ContainerBg,
     Container,
     Titulo,
     CampoBusca,
     IconeFiltro,
-    Input
+    Input,
+    Wrapper
 } from './BarraDePesquisa.styles';
 
 export default function BarraDePesquisa() {
     const [veiculos, setVeiculos] = useState([]);
-    const [textoPesquisa, setTextoPesquisa] = useState('');
-    const [mostrarFiltros, setMostrarFiltros] = useState(false);
-    const [textoLoc, setTextoLoc] = useState('');
-    const [precoMin, setPrecoMin] = useState('');
-    const [precoMax, setPrecoMax] = useState('');
-    const [anoMin, setAnoMin] = useState('');
-    const [anoMax, setAnoMax] = useState('');
-    const [categoriaSelecionada, setCategoriaSelecionada] = useState('');
-
     const navigate = useNavigate();
-    const { setResultadosFiltrados, setBuscaEfetuada } = useFiltros();
+
+    const {
+        textoPesquisa, setTextoPesquisa,
+        textoLoc, categoriaSelecionada,
+        precoMin, precoMax,
+        anoMin, anoMax,
+        setResultadosFiltrados,
+        setBuscaEfetuada,
+        mostrarFiltros, setMostrarFiltros
+    } = useFiltros();
 
     const categorias = [
         { nome: 'Hatch', icone: HatchIcone },
@@ -58,17 +61,15 @@ export default function BarraDePesquisa() {
             });
     }, []);
 
-    const lidarAplicarFiltros = (filtros) => {
+    const lidarAplicarFiltros = () => {
         const filtrosSeguros = {
-            
-            textoPesquisa: filtros.textoPesquisa || "",
-            textoLoc: filtros.textoLoc || "",
-            
-            categoriaSelecionada: filtros.categoriaSelecionada || "",
-            precoMin: parseInt(filtros.precoMin.replace(/\D/g, '')) || 0,
-            precoMax: parseInt(filtros.precoMax.replace(/\D/g, '')) || 999999999,
-            anoMin: parseInt(filtros.anoMin) || 1900,
-            anoMax: parseInt(filtros.anoMax) || 2100
+            textoPesquisa: textoPesquisa || "",
+            textoLoc: textoLoc || "",
+            categoriaSelecionada: categoriaSelecionada || "",
+            precoMin: parseInt((precoMin || "0").replace(/\D/g, '')) || 0,
+            precoMax: parseInt((precoMax || "999999999").replace(/\D/g, '')) || 999999999,
+            anoMin: parseInt(anoMin) || 1900,
+            anoMax: parseInt(anoMax) || 2100
         };
 
         const resultados = veiculos.filter((veiculo) => {
@@ -98,66 +99,46 @@ export default function BarraDePesquisa() {
     };
 
     return (
-        <ContainerBg>
-            <Container>
-                <Titulo>Encontre seu veículo</Titulo>
-                <CampoBusca>
-                    <img src={Lupa} alt="Lupa de pesquisa" />
-                    <Input
-                        type="search"
-                        placeholder="Ex: Civic, Corolla, Palio..."
-                        value={textoPesquisa}
-                        onChange={(e) => setTextoPesquisa(e.target.value)}
-                        onKeyDown={(e) => {
-                            if (e.key === 'Enter') {
-                                e.preventDefault();
-                                if (textoPesquisa.trim() === "") return;
-                                if (!mostrarFiltros) {
-                                    lidarAplicarFiltros({
-                                        textoPesquisa,
-                                        textoLoc,
-                                        categoriaSelecionada,
-                                        precoMin,
-                                        precoMax,
-                                        anoMin,
-                                        anoMax
-                                    });
+        <Wrapper>
+            <ContainerBg>
+                <Container>
+                    <Titulo>Encontre seu veículo</Titulo>
+                    <CampoBusca>
+                        <img src={Lupa} alt="Lupa de pesquisa" />
+                        <Input
+                            type="search"
+                            placeholder="Ex: Civic, Corolla, Palio..."
+                            value={textoPesquisa}
+                            onChange={(e) => setTextoPesquisa(e.target.value)}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter') {
+                                    e.preventDefault();
+                                    if (textoPesquisa.trim() === "") return;
+                                    if (!mostrarFiltros) {
+                                        lidarAplicarFiltros();
+                                    }
                                 }
-                            }
-                        }}
-                    />
-                    <IconeFiltro
-                        src={FiltroIcone}
-                        alt="Ícone de filtro"
-                        onClick={() => setMostrarFiltros(!mostrarFiltros)}
-                    />
-                </CampoBusca>
+                            }}
+                        />
+                        <IconeFiltro
+                            src={FiltroIcone}
+                            alt="Ícone de filtro"
+                            onClick={() => setMostrarFiltros(!mostrarFiltros)}
+                        />
+                    </CampoBusca>
+                </Container>
+            </ContainerBg>
 
-                {mostrarFiltros && (
-                    <Filtragem
-                        setTextoPesquisa={setTextoPesquisa}
-                        textoPesquisa={textoPesquisa}
+            {mostrarFiltros && (
+                <div className="dropdownFiltros">
+                    <FiltragemHome
                         categorias={categorias}
-                        textoLoc={textoLoc}
-                        setTextoLoc={setTextoLoc}
-                        categoriaSelecionada={categoriaSelecionada}
-                        setCategoriaSelecionada={setCategoriaSelecionada}
-                        precoMin={precoMin}
-                        setPrecoMin={setPrecoMin}
-                        precoMax={precoMax}
-                        setPrecoMax={setPrecoMax}
-                        anoMin={anoMin}
-                        setAnoMin={setAnoMin}
-                        anoMax={anoMax}
-                        setAnoMax={setAnoMax}
                         faixasPreco={faixasPreco}
                         faixasAno={faixasAno}
-                        mostrarFiltros={mostrarFiltros}
-                        setMostrarFiltros={setMostrarFiltros}
-                        onAplicarFiltros={lidarAplicarFiltros}
+                        aplicarFiltros={lidarAplicarFiltros}
                     />
-                )}
-            </Container>
-        </ContainerBg>
+                </div>
+            )}
+        </Wrapper>
     );
 }
