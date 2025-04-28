@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import OfertaDestaque from "../../components/OfertaDestaque/OfertaDestaque"
 import banner from "./assets/banner.png"
@@ -7,7 +8,6 @@ import Servicos from '../../components/Servicos/Servicos';
 import EncontrarVeiculo from '../../components/EncontrarVeiculo/EncontrarVeiculo';
 
 export default function Home(){
-
   const [veiculos, setVeiculos] = useState([]);
 
   useEffect(() => {
@@ -20,16 +20,11 @@ export default function Home(){
     return(
         <div>
             <Banner src={banner} alt="" />
-           
             <OfertaDestaque veiculos={veiculos} />
-
             <EncontrarVeiculo />
-
             <Servicos />
-
             <LojasParceiras />
             
         </div>
     )
-
 }
