@@ -6,6 +6,7 @@ import LojasParceiras from '../../components/LojasParceiras/LojasParceiras';
 import Servicos from '../../components/Servicos/Servicos';
 import EncontrarVeiculo from '../../components/EncontrarVeiculo/EncontrarVeiculo';
 import BarraDePesquisa from '../../components/BarraDePesquisa/BarraDePesquisa';
+import Categorias from '../../components/Categorias/Categorias';
 
 export default function Home(){
   const [veiculos, setVeiculos] = useState([]);
@@ -25,6 +26,7 @@ export default function Home(){
           </ContainerBanner>          
             <OfertaDestaque veiculos={veiculos} />
             <EncontrarVeiculo />
+            <Categorias />
             <Servicos />
             <LojasParceiras />   
         </div>

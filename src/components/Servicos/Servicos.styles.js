@@ -16,7 +16,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: flex-start;
 
-  @media (max-width: 1400px) {
+  @media (max-width: 1440px) {
     max-width: 1200px;
   }
 
@@ -51,9 +51,6 @@ export const Card = styled.div`
 
   @media(max-width: 1440px){
     padding: 20px 40px;
-  }
-
-  @media(max-width: 1400px){
     p {
     width: 33ch;
   }

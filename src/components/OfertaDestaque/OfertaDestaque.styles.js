@@ -17,7 +17,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: flex-start;
 
-  @media (max-width: 1400px) {
+  @media (max-width: 1440px) {
     max-width: 1200px;
   }
 

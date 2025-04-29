@@ -22,10 +22,7 @@ export const Container = styled.div`
     object-fit: cover; 
   }
 
-
-
-
-  @media (max-width: 1400px) {
+  @media (max-width: 1440px) {
     max-width: 1200px;
   }
 

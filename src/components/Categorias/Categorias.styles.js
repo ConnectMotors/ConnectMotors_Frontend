@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-export const LojasParceirasBG = styled.section`
-  padding: 40px 0;
+export const CategoriasBG = styled.section`
+  padding: 60px 0;
   display: flex;
   justify-content: center;
 `;
@@ -12,7 +12,6 @@ export const Container = styled.div`
   padding: 0 20px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 
   @media (max-width: 1440px) {
     max-width: 1200px;
@@ -29,22 +28,22 @@ export const Titulo = styled.h2`
   margin-bottom: 60px;
 `;
 
-export const Parceiros = styled.div`
+export const Opcoes = styled.div`
   display: flex;
-  justify-content: center; 
-  align-items: center;
   flex-wrap: wrap;
-  gap: 65px;
-  margin-bottom: 120px;
-  width: 100%;
+  gap: 20px;
+  justify-content: center;
 
   img {
-    width: 140px;
-  }
+    display: block;
+    width: 335px;
+    border-radius: 10px;
 
-  @media (max-width: 1440px) {
-    img {
-      width: 110px;
+    @media(max-width: 1440px){
+        width: 275px;
+    }
+    @media (max-width: 768px) {
+      width: 140px;
     }
   }
 `;
