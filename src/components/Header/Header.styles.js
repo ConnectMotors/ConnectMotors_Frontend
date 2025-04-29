@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const HeaderBg = styled.div`
   background-color: var(--branco);
@@ -60,7 +61,7 @@ export const Dropdown = styled.div`
   overflow: hidden;
 `;
 
-export const DropdownItem = styled.a`
+export const DropdownItem = styled(Link)`
   display: block;
   width: 100%;
   padding: 0.5rem 1rem;

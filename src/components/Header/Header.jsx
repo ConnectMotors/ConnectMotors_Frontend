@@ -23,8 +23,8 @@ function Header() {
     {
       title: "Comprar",
       dropdown: [
-        { label: "Comprar carros", link: "/" },
-        { label: "Comprar motos", link: "/" },
+        { label: "Comprar carros", link: "/comprar/carro" },
+        { label: "Comprar motos", link: "/comprar/moto" },
       ]
     },
     {
