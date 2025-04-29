@@ -13,6 +13,7 @@ export const FiltrosProvider = ({ children }) => {
   const [categoriaSelecionada, setCategoriaSelecionada] = useState(''); 
   const [tipoSelecionado, setTipoSelecionado] = useState(''); 
   const [precoMax, setPrecoMax] = useState('');
+  const [precoMin, setPrecoMin] = useState('');
   const [quilometragemMin, setQuilometragemMin] = useState('');
   const [quilometragemMax, setQuilometragemMax] = useState('');
   const [anoMin, setAnoMin] = useState('');

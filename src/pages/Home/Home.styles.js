@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const ContainerBanner = styled.div`
+  position: relative;
+`;
+
 export const Banner = styled.img`
     padding-top: 98px;
     width: 100%;

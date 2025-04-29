@@ -6,6 +6,7 @@ export const OfertaBg = styled.section`
   display: flex;
   justify-content: center;
   background-color: var(--cinza-claro);
+  margin-top: 80px;
 `;
 
 export const Container = styled.div`

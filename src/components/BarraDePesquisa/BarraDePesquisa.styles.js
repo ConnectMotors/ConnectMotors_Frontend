@@ -4,9 +4,9 @@ import styled from "styled-components";
 export const ContainerBg = styled.div`
  width: 100%;
  max-width: 800px;
-background-color: var(--branco);
-margin: 0 auto;
-border-radius: 10px;
+ background-color: var(--branco);
+ margin: 0 auto;
+ border-radius: 10px;
 `;
 
 export const Container = styled.div`
@@ -47,6 +47,11 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10; 
 
   .dropdownFiltros {
     position: absolute;

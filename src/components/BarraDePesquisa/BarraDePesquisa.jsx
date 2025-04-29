@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import { useFiltros } from "../../context/FiltrosContext";
-
 import Lupa from './assets/lupaPesquisa.svg';
 import FiltroIcone from './assets/filtroIcone.svg';
 import HatchIcone from './assets/hatchIcone.svg';
@@ -10,7 +9,6 @@ import SuvIcone from './assets/suvIcone.svg';
 import PicapeIcone from './assets/picapeIcone.svg';
 import MotoIcone from './assets/motoIcone.svg';
 import FiltragemHome from '../Filtragem/FiltragemHome';
-
 import {
     ContainerBg,
     Container,

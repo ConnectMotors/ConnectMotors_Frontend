@@ -1,11 +1,11 @@
-
 import React, { useState, useEffect } from 'react';
 import OfertaDestaque from "../../components/OfertaDestaque/OfertaDestaque"
 import banner from "./assets/banner.png"
-import {Banner} from "./Home.styles"
+import {Banner, ContainerBanner} from "./Home.styles"
 import LojasParceiras from '../../components/LojasParceiras/LojasParceiras';
 import Servicos from '../../components/Servicos/Servicos';
 import EncontrarVeiculo from '../../components/EncontrarVeiculo/EncontrarVeiculo';
+import BarraDePesquisa from '../../components/BarraDePesquisa/BarraDePesquisa';
 
 export default function Home(){
   const [veiculos, setVeiculos] = useState([]);
@@ -19,12 +19,14 @@ export default function Home(){
   
     return(
         <div>
+          <ContainerBanner>
             <Banner src={banner} alt="" />
+            <BarraDePesquisa />  
+          </ContainerBanner>          
             <OfertaDestaque veiculos={veiculos} />
             <EncontrarVeiculo />
             <Servicos />
-            <LojasParceiras />
-            
+            <LojasParceiras />   
         </div>
     )
 }
