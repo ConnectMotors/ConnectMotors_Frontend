@@ -18,7 +18,7 @@ export const HeaderContainer = styled.div`
   align-items: center;
   padding: 30px 0px;
 
-  @media(max-width: 1400px){
+  @media(max-width: 1440px){
     max-width: 1200px;
   }
   @media(max-width: 800px){

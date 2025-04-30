@@ -5,9 +5,10 @@ export default function BotaoVoltar({
   children = "← Voltar", 
   color, 
   backgroundColor, 
-  hoverBackgroundColor 
+  hoverBackgroundColor,
 }) {
   return (
+   
     <StyledBotaoVoltar 
       to={to}
       $color={color}
@@ -16,5 +17,6 @@ export default function BotaoVoltar({
     >
       {children}
     </StyledBotaoVoltar>
+   
   );
 }

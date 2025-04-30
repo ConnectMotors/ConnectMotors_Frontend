@@ -33,7 +33,7 @@ export const FiltrosProvider = ({ children }) => {
 
 
   const aplicarFiltros = () => {
-    
+
     setBuscaEfetuada(prev => !prev); 
   };
 

@@ -7,10 +7,7 @@ import { useParams } from "react-router-dom"; // 👈 IMPORTANTE
 import BotaoVoltar from "../../components/BotaoVoltar/BotaoVoltar"; // importa
 import { 
   ContainerComprar, 
-  TituloPagina, 
   Loader,
-  FiltrosContainer,
-  ListaVeiculosContainer,
   BotaoVoltarContainer,
 } from "./Comprar.styles";
 
@@ -73,20 +70,12 @@ export default function Comprar() {
 
   return (
     <ContainerComprar>
-      <TituloPagina>Veículos encontrados</TituloPagina>
-
-      <FiltrosContainer>
         <FiltragemComprar />
-      </FiltrosContainer>
-
-      <ListaVeiculosContainer>
         {veiculosFiltrados.length === 0 ? (
           <p>Este veículo não foi encontrado.</p>
         ) : (
           <ListagemVeiculos veiculos={veiculosFiltrados} />
         )}
-      </ListaVeiculosContainer>
-
       <BotaoVoltarContainer>
         <BotaoVoltar
           to="/"

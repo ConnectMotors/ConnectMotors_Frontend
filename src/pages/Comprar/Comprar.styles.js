@@ -4,11 +4,15 @@ export const ContainerComprar = styled.div`
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding-top: 140px;
+  padding-bottom: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 40px;
+
 
   @media (max-width: 768px) {
     padding: 20px 10px;
@@ -16,34 +20,18 @@ export const ContainerComprar = styled.div`
   }
 `;
 
-export const TituloPagina = styled.h1`
-
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--cinza-6);
-
-`;
-
-export const FiltrosContainer = styled.div`
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  align-items: center;
-  justify-content: center;
-`;
-
-export const ListaVeiculosContainer = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-`;
-
 export const BotaoVoltarContainer = styled.div`
   width: 100%;
-  display: flex;
+  padding: 0 80px;
+  gap: 30px;
+
+  @media (max-width: 1440px) {
+    max-width: 1200px;
+    padding: 0 105px;
+  }
 
 `;
+
 
 const girar = keyframes`
   0% { transform: rotate(0deg); }

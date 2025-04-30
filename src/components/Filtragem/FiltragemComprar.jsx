@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import BotaoLimparFiltros from "../BotaoLimparFiltros/BotaoLimparFiltros";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
 import {
-  ContainerFiltros,
+  ContainerBase,
+
   LinhaTipos,
   LinhaFiltros,
   BotaoTipo,
@@ -76,9 +77,9 @@ export default function FiltragemComprar() {
   };
 
   const handleSugestaoClick = (local) => {
-    setTextoLoc(local);             
-    setTextoLocalDigitado('');       
-    setSugestoes([]);                 
+    setTextoLoc(local);
+    setTextoLocalDigitado('');
+    setSugestoes([]);
     setTimeout(() => {
       aplicarFiltros();
     }, 0);
@@ -87,9 +88,9 @@ export default function FiltragemComprar() {
     if (e.key === "Enter" && sugestoes.length > 0) {
       e.preventDefault();
       const localSelecionado = sugestoes[0];
-      setTextoLocalDigitado(localSelecionado); 
-      setTextoLoc(localSelecionado);           
-      setSugestoes([]);                        
+      setTextoLocalDigitado(localSelecionado);
+      setTextoLoc(localSelecionado);
+      setSugestoes([]);
       setTimeout(() => {
         aplicarFiltros();
       }, 0);
@@ -114,25 +115,26 @@ export default function FiltragemComprar() {
   };
 
   return (
-    <ContainerFiltros>
-<LinhaTipos>
-  <span>Filtre por :</span>
-  <div className="botoes-tipo">
-    {tiposVeiculo.map((tipo) => (
-      <BotaoTipo
-        key={tipo}
-        $selecionado={tipoSelecionado === tipo}
-        onClick={() => {
-          setTipoSelecionado(tipo);
-          aplicarFiltros();
-          navigate(`/comprar/${tipo.toLowerCase()}`);
-        }}
-      >
-        {tipo}
-      </BotaoTipo>
-    ))}
-  </div>
-</LinhaTipos>
+    <ContainerBase>
+    
+      <LinhaTipos>
+        <span>Filtre por :</span>
+        <div className="botoes-tipo">
+          {tiposVeiculo.map((tipo) => (
+            <BotaoTipo
+              key={tipo}
+              $selecionado={tipoSelecionado === tipo}
+              onClick={() => {
+                setTipoSelecionado(tipo);
+                aplicarFiltros();
+                navigate(`/comprar/${tipo.toLowerCase()}`);
+              }}
+            >
+              {tipo}
+            </BotaoTipo>
+          ))}
+        </div>
+      </LinhaTipos>
 
       <LinhaFiltros>
         {/* Localização */}
@@ -177,8 +179,8 @@ export default function FiltragemComprar() {
           <option value="500000">até R$ 500.000</option>
         </Dropdown>
 
-          {/* Quilometragem Máxima */}
-          <Dropdown value={quilometragemMax} onChange={handleInputChangeAndFilter(setQuilometragemMax)}>
+        {/* Quilometragem Máxima */}
+        <Dropdown value={quilometragemMax} onChange={handleInputChangeAndFilter(setQuilometragemMax)}>
           <option value="">Quilometragem</option>
           <option value="10000">até 10.000 km</option>
           <option value="20000">até 20.000 km</option>
@@ -236,7 +238,8 @@ export default function FiltragemComprar() {
           Limpar filtros
         </BotaoLimparFiltros>
       </AreaBotaoLimpar>
+    
+    </ContainerBase>
 
-    </ContainerFiltros>
   );
 }

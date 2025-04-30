@@ -1,13 +1,17 @@
 import styled from "styled-components";
 
-export const ContainerFiltros = styled.div`
+export const ContainerBase = styled.div`
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 80px;
   display: flex;
   flex-direction: column;
   gap: 30px;
+  @media (max-width: 1440px) {
+    max-width: 1200px;
+    padding: 0 105px;
+  }
 
 `;
 
@@ -22,7 +26,7 @@ export const LinhaTipos = styled.div`
     color: var(--cinza-6);
   }
 
- 
+
   .botoes-tipo {
     width: 150px; 
     display: flex;
@@ -65,10 +69,20 @@ export const BotaoTipo = styled.button`
 `;
 export const LinhaFiltros = styled.div`
   display: flex;
-  flex-wrap: wrap;
   gap: 20px;
   align-items: center;
+  justify-content: flex-start;
+
+  @media (max-width: 1440px) {
+   gap: 10px;
+  }
+  @media (max-width: 1440px) {
+   gap: 6px;
+  }
+
+
 `;
+
 
 export const InputLocalizacao = styled.input`
   height: 38px;
@@ -130,7 +144,12 @@ export const Dropdown = styled.select`
   cursor: pointer;
   white-space: nowrap; 
   width: auto;
-  min-width: 130px; 
+ 
+  max-width: 200px;
+  flex: 1 1 auto;
+  @media (max-width: 1440px) {
+    max-width: 150px;
+  }
 
   &:focus {
     outline: none;
@@ -149,6 +168,9 @@ export const CampoBusca = styled.div`
   height: 38px;
   width: 300px;
   border: 1px solid var(--cinza-2);
+  flex: 1 1 auto;
+
+
 `;
 
 export const LupaIcone = styled.img`

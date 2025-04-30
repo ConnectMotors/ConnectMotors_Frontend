@@ -1,9 +1,9 @@
-import { Container, ListaCards } from "./ListagemVeiculos.styles";
+import { ContainerBase, ListaCards } from "./ListagemVeiculos.styles";
 import CardAnuncio from "../Card-anuncio/Card-anuncio";
 
 export default function ListagemVeiculos({ veiculos = [] }) {
   return (
-    <Container>
+    <ContainerBase>
       <ListaCards>
         {veiculos.map((veiculo, index) => (
           <li key={index}>
@@ -27,6 +27,6 @@ export default function ListagemVeiculos({ veiculos = [] }) {
           </li>
         ))}
       </ListaCards>
-    </Container>
+      </ContainerBase>
   );
 }
