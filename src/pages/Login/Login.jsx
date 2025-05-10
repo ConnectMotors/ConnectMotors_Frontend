@@ -60,9 +60,9 @@ export default function Login() {
             <p>Insira seu e-mail e senha  para fazer o login</p>
 
             <Campo>
-              <label htmlFor="email">Nome de usuário ou email</label>
+              <label htmlFor="text">Nome de usuário ou email</label>
               <input
-                type="email"
+                type="text"
                 placeholder="Digite seu nome de usuário ou email"
                 value={identifier}
                 onChange={(evento) => setIdentifier(evento.target.value)}
