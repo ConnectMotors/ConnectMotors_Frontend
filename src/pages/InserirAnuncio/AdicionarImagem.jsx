@@ -75,20 +75,31 @@ async function handleConcluir() {
     return;
   }
 
-const formData = new FormData();
-formData.append('anuncio', new Blob([JSON.stringify(anuncio)], { type: 'application/json' }));
-imagens.forEach(imagem => {
-  formData.append('imagens', imagem);
-});
+ const anuncioCompleto = {
+  ...dadosAnuncio,
+  ...dadosVeiculo
+};
 
-fetch('http://localhost:8080/anuncios', {
-  method: 'POST',
-  body: formData,
-  headers: {
-    'Authorization': `Bearer ${token}`  // Aqui está o essencial
-    // NÃO adicione manualmente o Content-Type!
-  }
-});
+
+  console.log("🔍 Objeto anuncioCompleto:", JSON.stringify(anuncioCompleto, null, 2));
+
+  const formData = new FormData();
+  formData.append(
+  'anuncio',
+  new Blob([JSON.stringify(anuncioCompleto)], { type: 'application/json' })
+);
+  selectedFiles.forEach(imagem => {
+    formData.append('imagens', imagem);
+  });
+
+  try {
+    const response = await fetch('http://localhost:8080/anuncios', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    });
 
     if (response.ok) {
       alert("Anúncio cadastrado com sucesso!");
@@ -99,7 +110,11 @@ fetch('http://localhost:8080/anuncios', {
       const erro = await response.text();
       alert("Erro ao cadastrar anúncio: " + erro);
     }
-  } 
+  } catch (error) {
+    alert("Erro inesperado: " + error.message);
+  }
+}
+ 
 
   return (
     <AdicionarImagemBG>

@@ -34,7 +34,7 @@ export default function DadosVeiculo() {
   const [quilometragem, setQuilometragem] = useState('');
   const [motor, setMotor] = useState('');
   const [combustivel, setCombustivel] = useState('');
- 
+  const [cambio, setCambio] = useState('');
   const [cidadesFiltradas, setCidadesFiltradas] = useState([]);
   const [carregando, setCarregando] = useState(false);
   const [fabricantes, setFabricantes] = useState([]);
@@ -58,7 +58,7 @@ export default function DadosVeiculo() {
   const anosDisponiveis = Array.from({ length: 2025 - 2010 + 1 }, (_, i) => (2010 + i).toString());
   // Filtros vindos do backend
   const [filtros, setFiltros] = useState({
-    combustiveis: ["Gasolina", "Álcool", "Flex", "Diesel", "Elétrico", "Híbrido"],
+    combustiveis: ["GASOLINA", "ALCOOL", "FLEX", "DIESEL", "ELETRICO", "HIBRIDO"],
   });
 
   useEffect(() => {
@@ -127,56 +127,68 @@ export default function DadosVeiculo() {
     }
   };
 
-  const handleSalvarEDirecionarParaDadosAnuncio = async () => {
-    try {
-      if (![cidade, estado, cep, tipoVeiculo, marcaId, anoFabricacao, anoModelo, modeloId, versao, quilometragem, motor, corId, combustivel].every(Boolean)) {
-        alert('Por favor, preencha todos os campos obrigatórios.');
-        return;
-      }
-      // Validação adicional para o CEP e Km
-      const cepValido = /^[0-9]{5}-?[0-9]{3}$/.test(cep);
-      if (!cepValido) {
-        alert('Por favor, insira um CEP válido.');
-        return;
-      }
+const formatarCep = (cep) => {
+  const limpo = cep.replace(/\D/g, '');
+  return limpo.replace(/^(\d{5})(\d{3})$/, '$1-$2');
+};
 
-      const quilometragemLimpa = quilometragem.replace(/\D/g, '');
-      if (!quilometragemLimpa || isNaN(quilometragemLimpa)) {
-        alert('Por favor, insira uma quilometragem válida.');
-        return;
-      }
-      const kmValido = quilometragemLimpa !== '' && !isNaN(Number(quilometragemLimpa));
+const handleSalvarEDirecionarParaDadosAnuncio = async () => {
+  try {
+    // Verifica se todos os campos obrigatórios estão preenchidos
+    const camposObrigatorios = [
+      cidade, estado, cep, tipoVeiculo, marcaId, anoFabricacao,
+      anoModelo, modeloId, versao, quilometragem, motor, corId, combustivel, carroceria, cambio
+    ];
 
-      if (!kmValido || parseInt(quilometragem) < 0) {
-        alert('Por favor, insira um valor de quilometragem válido.');
-        return;
-      }
-      setCarregando(true); // inicia carregamento
-
-      const dadosVeiculo = {
-        cep,
-        quilometragem: parseInt(quilometragemLimpa, 10),
-        tipoVeiculo,
-        marcaId,
-        modeloId,
-        corId,
-        anoFabricacao,
-        anoModelo,
-        combustivel,
-        carroceria,
-        motor,
-        versao
-      };
-
-      localStorage.setItem('dadosVeiculo', JSON.stringify(dadosVeiculo));
-      navigate('/anuncio/dados-anuncio');
-    } catch (error) {
-      console.error('Erro ao salvar os dados do veículo:', error);
-      alert('Ocorreu um erro ao prosseguir. Tente novamente mais tarde.');
-    } finally {
-      setCarregando(false); // termina carregamento
+    if (!camposObrigatorios.every(Boolean)) {
+      alert('Por favor, preencha todos os campos obrigatórios.');
+      return;
     }
-  };
+
+    // Validação do CEP
+    const cepValido = /^[0-9]{5}-?[0-9]{3}$/.test(cep);
+    if (!cepValido) {
+      alert('Por favor, insira um CEP válido no formato 12345-678.');
+      return;
+    }
+
+    // Limpa e valida a quilometragem
+    const quilometragemLimpa = quilometragem.replace(/\D/g, '');
+    const kmNumerico = parseInt(quilometragemLimpa, 10);
+
+    if (isNaN(kmNumerico) || kmNumerico < 0) {
+      alert('Por favor, insira uma quilometragem válida.');
+      return;
+    }
+
+    setCarregando(true);
+
+    const dadosVeiculo = {
+      cep: formatarCep(cep),
+      quilometragem: kmNumerico,
+      tipoVeiculo,
+      marcaId,
+      modeloId,
+      corId,
+      anoFabricacao,
+      anoModelo,
+      combustivel,
+      carroceria,
+      motor,
+      versao,
+      cambio
+    };
+
+    localStorage.setItem('dadosVeiculo', JSON.stringify(dadosVeiculo));
+    navigate('/anuncio/dados-anuncio');
+
+  } catch (error) {
+    console.error('Erro ao salvar os dados do veículo:', error);
+    alert('Ocorreu um erro ao prosseguir. Tente novamente mais tarde.');
+  } finally {
+    setCarregando(false);
+  }
+};
 
 
 
@@ -337,6 +349,14 @@ export default function DadosVeiculo() {
               ))}
             </Select>
           </InputGroup>
+          <InputGroup>
+  <Label>Câmbio</Label>
+  <Select value={cambio} onChange={e => setCambio(e.target.value)}>
+    <option value="">Selecione</option>
+    <option value="MANUAL">Manual</option>
+    <option value="AUTOMATICO">Automático</option>
+  </Select>
+</InputGroup>
 
           {/* Botões */}
           <BotoesContainer>

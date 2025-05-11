@@ -44,8 +44,6 @@ export default function DadosAnuncio() {
   }
 
   const dadosAnuncio = {
-    nome,
-    telefone,
     preco: valor,
     descricao,
   };
