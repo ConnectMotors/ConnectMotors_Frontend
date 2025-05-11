@@ -21,7 +21,7 @@ export default function Comprar() {
   const [carregando, setCarregando] = useState(true);
 
   useEffect(() => {
-    fetch('/Data/veiculos_exemplo.json')
+    fetch('http://localhost:8080/anuncios')
       .then((res) => res.json())
       .then((data) => {
         setTodosVeiculos(data);

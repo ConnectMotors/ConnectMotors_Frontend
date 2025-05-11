@@ -12,7 +12,7 @@ export default function Home(){
   const [veiculos, setVeiculos] = useState([]);
 
   useEffect(() => {
-    fetch('/Data/veiculos_exemplo.json')
+    fetch('http://localhost:8080/anuncios')
       .then(response => response.json())
       .then(data => setVeiculos(data))
       .catch(error => console.error('Erro ao carregar veículos:', error));

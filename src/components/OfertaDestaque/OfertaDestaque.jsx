@@ -1,6 +1,6 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
-import CardAnuncio from '../Card-anuncio/Card-anuncio';
+import React, { useRef, useState, useEffect } from "react";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import CardAnuncio from "../Card-anuncio/Card-anuncio";
 import {
   OfertaBg,
   Container,
@@ -9,14 +9,14 @@ import {
   CarrosselWrapper,
   Carrossel,
   Grid,
-  NavButton
-} from './OfertaDestaque.styles';
+  NavButton,
+} from "./OfertaDestaque.styles";
 
 export default function OfertaDestaque({ veiculos }) {
   const gridRef = useRef(null);
   const [activePage, setActivePage] = useState(0);
 
-  const cardsPerPage = 1; 
+  const cardsPerPage = 1;
   const totalPages = Math.ceil(veiculos.length / cardsPerPage);
 
   const scrollToPage = (pageIndex) => {
@@ -31,7 +31,7 @@ export default function OfertaDestaque({ veiculos }) {
 
     grid.scrollTo({
       left: scrollAmount,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
 
     setActivePage(pageIndex);
@@ -39,7 +39,7 @@ export default function OfertaDestaque({ veiculos }) {
 
   const scroll = (direction) => {
     let nextPage;
-    if (direction === 'left') {
+    if (direction === "left") {
       nextPage = activePage === 0 ? totalPages - 1 : activePage - 1;
     } else {
       nextPage = activePage === totalPages - 1 ? 0 : activePage + 1;
@@ -64,8 +64,8 @@ export default function OfertaDestaque({ veiculos }) {
       setActivePage(index);
     };
 
-    grid.addEventListener('scroll', handleScroll);
-    return () => grid.removeEventListener('scroll', handleScroll);
+    grid.addEventListener("scroll", handleScroll);
+    return () => grid.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -76,7 +76,7 @@ export default function OfertaDestaque({ veiculos }) {
         </Topo>
 
         <CarrosselWrapper>
-          <NavButton left onClick={() => scroll('left')}>
+          <NavButton left onClick={() => scroll("left")}>
             <FiChevronLeft size={32} />
           </NavButton>
 
@@ -86,24 +86,25 @@ export default function OfertaDestaque({ veiculos }) {
                 <CardAnuncio
                   key={item.id}
                   id={item.id}
-                  nomeVeiculo={item.nomeVeiculo}
-                  fabricante={item.fabricante}
-                  valor={item.valor}
-                  anoFabricacao={item.anoFabricacao}
-                  anoModelo={item.anoModelo}
-                  km={item.km}
-                  cidade={item.cidade}
-                  estado={item.estado}
-                  motor={item.motor}
-                  versao={item.versao}
-                  combustivel={item.combustivel}
-                  fotoPrincipal={item.fotoPrincipal}
+                  nomeVeiculo={item.carro.modelo?.nome}
+                  fabricante={item.carro.marca?.nome}
+                  valor={item.preco}
+                  anoFabricacao={item.carro.anoFabricacao}
+                  anoModelo={item.carro.anoModelo}
+                  km={item.quilometragem}
+                  cidade={item.localidade}
+                  estado={item.uf}
+                  motor={item.carro.motor}
+                  versao={item.carro.versao}
+                  combustivel={item.carro.combustivel}
+                  fotoPrincipal={`http://localhost:8080${item.imagensPaths?.[0] || ""}`}
+
                 />
               ))}
             </Grid>
           </Carrossel>
 
-          <NavButton right onClick={() => scroll('right')}>
+          <NavButton right onClick={() => scroll("right")}>
             <FiChevronRight size={32} />
           </NavButton>
         </CarrosselWrapper>
