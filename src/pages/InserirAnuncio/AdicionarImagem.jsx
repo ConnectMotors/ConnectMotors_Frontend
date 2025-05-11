@@ -65,45 +65,41 @@ export default function AdicionarImagem() {
     navigate("/anuncio/dados-anuncio");
   }
 
-  async function handleConcluir() {
-    const dadosVeiculo = JSON.parse(localStorage.getItem("dadosVeiculo"));
-    const dadosAnuncio = JSON.parse(localStorage.getItem("dadosAnuncio"));
+async function handleConcluir() {
+  const dadosVeiculo = JSON.parse(localStorage.getItem("dadosVeiculo"));
+  const dadosAnuncio = JSON.parse(localStorage.getItem("anuncio"));
+  const token = sessionStorage.getItem("token");
 
-    if (!dadosVeiculo || !dadosAnuncio) {
-      alert("Informações incompletas. Preencha todas as etapas.");
-      return;
-    }
-
-    const formData = new FormData();
-    formData.append("anuncio", new Blob([JSON.stringify({
-      ...dadosVeiculo,
-      ...dadosAnuncio
-    })], { type: "application/json" }));
-
-    selectedFiles.forEach((file) => {
-      formData.append("imagens", file);
-    });
-
-    try {
-      const response = await fetch("http://localhost:8080/anuncios", {
-        method: "POST",
-        body: formData
-      });
-
-      if (response.ok) {
-        alert("Anúncio cadastrado com sucesso!");
-        localStorage.removeItem("dadosVeiculo");
-        localStorage.removeItem("dadosAnuncio");
-        navigate("/");
-      } else {
-        const erro = await response.text();
-        alert("Erro ao cadastrar anúncio: " + erro);
-      }
-    } catch (error) {
-      console.error("Erro ao enviar:", error);
-      alert("Erro ao cadastrar anúncio.");
-    }
+  if (!dadosVeiculo || !dadosAnuncio) {
+    alert("Informações incompletas. Preencha todas as etapas.");
+    return;
   }
+
+const formData = new FormData();
+formData.append('anuncio', new Blob([JSON.stringify(anuncio)], { type: 'application/json' }));
+imagens.forEach(imagem => {
+  formData.append('imagens', imagem);
+});
+
+fetch('http://localhost:8080/anuncios', {
+  method: 'POST',
+  body: formData,
+  headers: {
+    'Authorization': `Bearer ${token}`  // Aqui está o essencial
+    // NÃO adicione manualmente o Content-Type!
+  }
+});
+
+    if (response.ok) {
+      alert("Anúncio cadastrado com sucesso!");
+      localStorage.removeItem("dadosVeiculo");
+      localStorage.removeItem("anuncio");
+      navigate("/");
+    } else {
+      const erro = await response.text();
+      alert("Erro ao cadastrar anúncio: " + erro);
+    }
+  } 
 
   return (
     <AdicionarImagemBG>

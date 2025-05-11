@@ -27,29 +27,32 @@ export default function DadosAnuncio() {
   const [valor, setValor] = useState("");
   const [descricao, setDescricao] = useState("");
 
-  // Carregar dados do localStorage ao montar o componente
   useEffect(() => {
-    const anuncioSalvo = JSON.parse(localStorage.getItem("anuncio")) || {};
-    setNome(anuncioSalvo.nome || "");
-    setTelefone(anuncioSalvo.telefone || "");
-    setValor(anuncioSalvo.valor || "");
-    setDescricao(anuncioSalvo.descricao || "");
+    const anuncio = JSON.parse(localStorage.getItem("anuncio"));
+    if (anuncio) {
+      setNome(anuncio.nome || "");
+      setTelefone(anuncio.telefone || "");
+      setValor(anuncio.preco || "");
+      setDescricao(anuncio.descricao || "");
+    }
   }, []);
 
   function handleContinuar() {
-    const anuncioExistente = JSON.parse(localStorage.getItem("anuncio")) || {};
-
-    const dadosAtualizados = {
-      ...anuncioExistente,
-      nome,
-      telefone,
-      preco: valor,
-      descricao,
-    };
-
-    localStorage.setItem("anuncio", JSON.stringify(dadosAtualizados));
-    navigate("/anuncio/adicionar-imagem");
+  if (!nome || !telefone || !valor) {
+    alert("Preencha todos os campos obrigatórios.");
+    return;
   }
+
+  const dadosAnuncio = {
+    nome,
+    telefone,
+    preco: valor,
+    descricao,
+  };
+
+  localStorage.setItem("anuncio", JSON.stringify(dadosAnuncio));
+  navigate("/anuncio/adicionar-imagem");
+}
 
   function handleVoltar() {
     navigate("/anuncio/dados-veiculo");

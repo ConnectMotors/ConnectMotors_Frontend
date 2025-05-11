@@ -32,12 +32,24 @@ export const Label = styled.label`
   margin-bottom: 0.5rem;
 `;
 
+const baseInputStyles = `
+  padding: 0.75rem 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border 0.2s, box-shadow 0.2s;
+  background: var(--branco);
+
+  &:focus {
+    outline: none;
+    border-color: var(--azul-4);
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.15);
+  }
+`;
+
 export const Input = styled.input`
-  padding: 0.75rem;
-  border: none;
-  border-radius: 5px;
-  background: white;
-  font-size: 1rem;
+  ${baseInputStyles}
+  
 `;
 
 export const TextArea = styled.textarea`
@@ -47,6 +59,13 @@ export const TextArea = styled.textarea`
   min-height: 150px;
   resize: none;
   font-size: 1rem;
+  border: 1px solid #ccc;
+
+  &:focus {
+    outline: none;
+    border-color: var(--azul-4);
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.15);
+  }
 `;
 
 export const BotoesContainer = styled.div`
