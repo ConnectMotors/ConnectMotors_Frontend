@@ -26,6 +26,7 @@ import userIcon from "./assets/userIcon.svg";
 import localizacao from "./assets/localizacao.svg";
 import telefone from "./assets/telefone.svg";
 import mensagem from "./assets/mensagem.svg";
+import axios from 'axios';
 
 export default function AnuncioDetalhado() {
   const { id } = useParams();
@@ -33,20 +34,49 @@ export default function AnuncioDetalhado() {
   const [fotos, setFotos] = useState([]);
   const [indiceAtual, setIndiceAtual] = useState(0);
 
-  useEffect(() => {
-    fetch('/Data/veiculos_exemplo.json')
-      .then(response => response.json())
-      .then(data => {
-        const veiculoEncontrado = data.find(item => item.id === Number(id));
-        setVeiculo(veiculoEncontrado);
-        if (veiculoEncontrado) {
-          const todasFotos = [veiculoEncontrado.fotoPrincipal, ...(veiculoEncontrado.fotoSecundaria || [])];
-          setFotos(todasFotos);
-          setIndiceAtual(0);
-        }
-      })
-      .catch(error => console.error('Erro ao carregar veículo:', error));
-  }, [id]);
+ useEffect(() => {
+  async function buscarAnuncio() {
+    try {
+      const response = await axios.get("http://localhost:8080/anuncios");
+      const anuncio = response.data.find(item => item.id.toString() === id.toString());
+
+      if (!anuncio) {
+        console.error("Anúncio não encontrado.");
+        return;
+      }
+
+      // Adaptação dos dados para o componente
+      const veiculoAdaptado = {
+        id: anuncio.id,
+        nomeVeiculo: anuncio.carro.modelo.nome,
+        fabricante: anuncio.carro.marca.nome,
+        versao: anuncio.carro.versao,
+        motor: anuncio.carro.motor,
+        cor: anuncio.carro.cor.nome,
+        anoFabricacao: anuncio.carro.anoFabricacao,
+        anoModelo: anuncio.carro.anoModelo,
+        km: Number(anuncio.quilometragem),
+        combustivel: anuncio.carro.combustivel,
+        cidade: anuncio.localidade,
+        estado: anuncio.uf,
+        cep: anuncio.cep,
+        valor: anuncio.preco,
+        descricao: anuncio.descricao,
+        nome: anuncio.usuario.username,
+        fotoPrincipal: `http://localhost:8080${anuncio.imagensPaths[0]}`,
+        fotoSecundaria: anuncio.imagensPaths.slice(1).map(path => `http://localhost:8080${path}`)
+      };
+
+      setVeiculo(veiculoAdaptado);
+      setFotos([veiculoAdaptado.fotoPrincipal, ...veiculoAdaptado.fotoSecundaria]);
+      setIndiceAtual(0);
+    } catch (error) {
+      console.error("Erro ao buscar anúncio no backend:", error);
+    }
+  }
+
+  buscarAnuncio();
+}, [id]);
 
   function fotoAnterior() {
     setIndiceAtual((prev) => (prev === 0 ? fotos.length - 1 : prev - 1));
@@ -56,7 +86,11 @@ export default function AnuncioDetalhado() {
     setIndiceAtual((prev) => (prev === fotos.length - 1 ? 0 : prev + 1));
   }
 
-  if (!veiculo) return <div style={{ padding: '20px', textAlign: 'center' }}>Carregando anúncio...</div>;
+  if (!veiculo) {
+  return <div style={{ padding: '120px', textAlign: 'center' }}>
+    Anúncio não encontrado ou ainda carregando...
+  </div>;
+}
 
   return (
     <PageBackground>
