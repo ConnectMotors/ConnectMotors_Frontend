@@ -9,24 +9,22 @@ export default function ListagemVeiculos({ veiculos = [] }) {
           <li key={index}>
             <CardAnuncio
               id={veiculo.id}
-              nomeVeiculo={veiculo.nomeVeiculo}
-              descricao={veiculo.descricao}
-              valor={veiculo.valor}
-              anoFabricacao={veiculo.anoFabricacao}
-              anoModelo={veiculo.anoModelo}
-              km={veiculo.km}
-              cidade={veiculo.cidade}
-              estado={veiculo.estado}
-              fabricante={veiculo.fabricante}
-              motor={veiculo.motor}
-              versao={veiculo.versao}
-              combustivel={veiculo.combustivel}
-              fotoPrincipal={veiculo.fotoPrincipal}
-              fotoSecundaria={veiculo.fotoSecundaria}
+              nomeVeiculo={veiculo.carro?.modelo?.nome}
+              fabricante={veiculo.carro?.marca?.nome}
+              valor={Number(veiculo.preco)}
+              anoFabricacao={veiculo.carro?.anoFabricacao}
+              anoModelo={veiculo.carro?.anoModelo}
+              km={veiculo.quilometragem}
+              cidade={veiculo.localidade}
+              estado={veiculo.uf}
+              motor={veiculo.carro?.motor}
+              versao={veiculo.carro?.versao}
+              combustivel={veiculo.carro?.combustivel}
+              fotoPrincipal={`http://localhost:8080${veiculo.imagensPaths?.[0] || ""}`}
             />
           </li>
         ))}
       </ListaCards>
-      </ContainerBase>
+    </ContainerBase>
   );
 }
