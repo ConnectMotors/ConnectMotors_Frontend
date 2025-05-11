@@ -4,6 +4,7 @@ export const DadosVeiculoBG = styled.div`
   padding-top: 120px;
   padding-bottom: 60px;
 
+
 `;
 
 export const Container = styled.div`
@@ -35,8 +36,9 @@ export const TituloSecao = styled.div`
 
 export const Formulario = styled.form`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem 2rem;
+  width: 100%;
 `;
 
 export const InputGroup = styled.div`
@@ -44,7 +46,7 @@ export const InputGroup = styled.div`
   flex-direction: column;
   position: relative;
   z-index: 1; 
-
+  width: 100%;
 `;
 
 export const Label = styled.label`
@@ -145,38 +147,5 @@ export const Divider = styled.img`
   margin-bottom: 2rem;
 `;
 
-export const SugestoesLista = styled.ul`
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  z-index: 10;
-  background-color: white;
-  border: 1px solid #ccc;
-  border-top: none;
-  max-height: 200px;
-  overflow-y: auto;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  margin-top: 4px;
-`;
 
-export const SugestaoItem = styled.li`
-  padding: 10px 14px;
-  font-size: 0.95rem;
-  color: #333;
-  cursor: pointer;
-  transition: background 0.2s;
 
-  &:hover {
-    background-color: #f4f4f4;
-  }
-`;
-export const InputDropdown = styled(Input)`
-  background-image: url("data:image/svg+xml;utf8,<svg fill='gray' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
-  background-repeat: no-repeat;
-  background-position: right 12px center;
-  background-size: 16px 16px;
-  cursor: pointer;
-`;

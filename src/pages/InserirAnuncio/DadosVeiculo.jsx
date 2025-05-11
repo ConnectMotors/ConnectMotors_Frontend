@@ -14,9 +14,6 @@ import {
   BotaoVoltar,
   TitlePrincipal,
   Divider,
-  SugestoesLista,
-  SugestaoItem,
-  InputDropdown
 } from './DadosVeiculo.styles';
 import seta from "./assets/seta.svg";
 import divider from "./assets/divider.svg";
@@ -32,13 +29,12 @@ export default function DadosVeiculo() {
   const [tipoVeiculo, setTipoVeiculo] = useState('');
   const [anoFabricacao, setAnoFabricacao] = useState('');
   const [anoModelo, setAnoModelo] = useState('');
-  const [sugestoesAnoFabricacao, setSugestoesAnoFabricacao] = useState([]);
-  const [sugestoesAnoModelo, setSugestoesAnoModelo] = useState([]);
+ 
   const [versao, setVersao] = useState('');
   const [quilometragem, setQuilometragem] = useState('');
   const [motor, setMotor] = useState('');
   const [combustivel, setCombustivel] = useState('');
-  const [sugestoesVersaoFiltradas, setSugestoesVersaoFiltradas] = useState([]);
+ 
   const [cidadesFiltradas, setCidadesFiltradas] = useState([]);
   const [carregando, setCarregando] = useState(false);
   const [fabricantes, setFabricantes] = useState([]);
@@ -54,7 +50,7 @@ export default function DadosVeiculo() {
     "Porto Alegre", "Brasília", "Salvador", "Fortaleza", "Manaus", "Recife"
   ];
   const opcoesMotor = [
-    "1.0", "1.0 Turbo", "1.3", "1.5", "1.6", "1.8", "2.0", "2.0 Turbo", "3.0", "Elétrico", "Híbrido"
+    "1.0", "1.0 Turbo", "1.3", "1.5", "1.6", "1.8", "2.0", 
   ];
   const sugestoesVersao = [
     "Comfortline", "Highline", "Trendline", "Exclusive", "XLS", "XLT", "Platinum", "RS", "GT Line"
@@ -144,12 +140,12 @@ export default function DadosVeiculo() {
         return;
       }
 
-    const quilometragemLimpa = quilometragem.replace(/\D/g, '');
-if (!quilometragemLimpa || isNaN(quilometragemLimpa)) {
-  alert('Por favor, insira uma quilometragem válida.');
-  return;
-}
-const kmValido = quilometragemLimpa !== '' && !isNaN(Number(quilometragemLimpa));
+      const quilometragemLimpa = quilometragem.replace(/\D/g, '');
+      if (!quilometragemLimpa || isNaN(quilometragemLimpa)) {
+        alert('Por favor, insira uma quilometragem válida.');
+        return;
+      }
+      const kmValido = quilometragemLimpa !== '' && !isNaN(Number(quilometragemLimpa));
 
       if (!kmValido || parseInt(quilometragem) < 0) {
         alert('Por favor, insira um valor de quilometragem válido.');
@@ -215,41 +211,17 @@ const kmValido = quilometragemLimpa !== '' && !isNaN(Number(quilometragemLimpa))
             <Input
               value={cidade}
               onChange={e => setCidade(e.target.value)}
-              placeholder="Digite o nome da cidade"
-              onBlur={() => setTimeout(() => setCidadesFiltradas([]), 100)} // Espera clique
-              onFocus={() => {
-                if (cidade.length > 0) {
-                  setCidadesFiltradas(
-                    todasCidades.filter(c => c.toLowerCase().startsWith(cidade.toLowerCase()))
-                  );
-                }
-              }}
+              placeholder="Cidade"
+              readOnly // opcional, se não quiser que o usuário edite manualmente
             />
-            {cidadesFiltradas.length > 0 && (
-              <SugestoesLista>
-                {cidadesFiltradas.map((cidadeSugestao, index) => (
-                  <SugestaoItem
-                    key={index}
-                    onClick={() => {
-                      setCidade(cidadeSugestao);
-                      setCidadesFiltradas([]);
-                    }}
-                  >
-                    {cidadeSugestao}
-                  </SugestaoItem>
-                ))}
-              </SugestoesLista>
-            )}
           </InputGroup>
           <InputGroup>
             <Label>Estado</Label>
-            <Select value={estado} onChange={e => setEstado(e.target.value)}>
-              <option value="">UF</option>
-              {["AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA",
-                "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"].map((uf) => (
-                  <option key={uf} value={uf}>{uf}</option>
-                ))}
-            </Select>
+            <Input
+              value={estado}
+              placeholder="Estado"
+              readOnly // impede edição manual
+            />
           </InputGroup>
           <InputGroup>
             <Label>CEP</Label>
@@ -259,10 +231,9 @@ const kmValido = quilometragemLimpa !== '' && !isNaN(Number(quilometragemLimpa))
               placeholder="00000-000"
             />
           </InputGroup>
-          <div />
-
+          
           {/* Linha 2 */}
-          <InputGroup>
+          <InputGroup >
             <Label>Tipo do veículo</Label>
             <Select value={tipoVeiculo} onChange={e => setTipoVeiculo(e.target.value)}>
               <option value="">Selecione</option>
@@ -282,56 +253,23 @@ const kmValido = quilometragemLimpa !== '' && !isNaN(Number(quilometragemLimpa))
 
           <InputGroup>
             <Label>Ano fabricação</Label>
-            <InputDropdown
-              placeholder="Selecione"
-              value={anoFabricacao}
-              readOnly
-              onClick={() => setSugestoesAnoFabricacao(anosDisponiveis)}
-              onBlur={() => setTimeout(() => setSugestoesAnoFabricacao([]), 150)}
-            />
-            {sugestoesAnoFabricacao.length > 0 && (
-              <SugestoesLista style={{ zIndex: 999 }}>
-                {sugestoesAnoFabricacao.map((ano, index) => (
-                  <SugestaoItem
-                    key={index}
-                    onClick={() => {
-                      setAnoFabricacao(ano);
-                      setSugestoesAnoFabricacao([]);
-                    }}
-                  >
-                    {ano}
-                  </SugestaoItem>
-                ))}
-              </SugestoesLista>
-            )}
+            <Select value={anoFabricacao} onChange={e => setAnoFabricacao(e.target.value)}>
+              <option value="">Selecione</option>
+              {Array.from({ length: 2025 - 2015 + 1 }, (_, i) => 2015 + i).map(ano => (
+                <option key={ano} value={ano}>{ano}</option>
+              ))}
+            </Select>
           </InputGroup>
 
           <InputGroup>
             <Label>Ano modelo</Label>
-            <InputDropdown
-              placeholder="Selecione"
-              value={anoModelo}
-              readOnly
-              onClick={() => setSugestoesAnoModelo(anosDisponiveis)}
-              onBlur={() => setTimeout(() => setSugestoesAnoModelo([]), 150)}
-            />
-            {sugestoesAnoModelo.length > 0 && (
-              <SugestoesLista style={{ zIndex: 999 }}>
-                {sugestoesAnoModelo.map((ano, index) => (
-                  <SugestaoItem
-                    key={index}
-                    onClick={() => {
-                      setAnoModelo(ano);
-                      setSugestoesAnoModelo([]);
-                    }}
-                  >
-                    {ano}
-                  </SugestaoItem>
-                ))}
-              </SugestoesLista>
-            )}
+            <Select value={anoModelo} onChange={e => setAnoModelo(e.target.value)}>
+              <option value="">Selecione</option>
+              {Array.from({ length: 2025 - 2015 + 1 }, (_, i) => 2015 + i).map(ano => (
+                <option key={ano} value={ano}>{ano}</option>
+              ))}
+            </Select>
           </InputGroup>
-
           {/* Linha 3 */}
           <InputGroup>
             <Label>Nome do Veículo</Label>
@@ -344,35 +282,12 @@ const kmValido = quilometragemLimpa !== '' && !isNaN(Number(quilometragemLimpa))
           </InputGroup>
           <InputGroup>
             <Label>Versão</Label>
-            <Input
-              value={versao}
-              onChange={e => {
-                const valor = e.target.value;
-                setVersao(valor);
-                setSugestoesVersaoFiltradas(
-                  sugestoesVersao.filter(v =>
-                    v.toLowerCase().startsWith(valor.toLowerCase())
-                  )
-                );
-              }}
-              onBlur={() => setTimeout(() => setSugestoesVersaoFiltradas([]), 100)}
-              placeholder="Digite a versão"
-            />
-            {sugestoesVersaoFiltradas.length > 0 && (
-              <SugestoesLista>
-                {sugestoesVersaoFiltradas.map((sugestao, index) => (
-                  <SugestaoItem
-                    key={index}
-                    onClick={() => {
-                      setVersao(sugestao);
-                      setSugestoesVersaoFiltradas([]);
-                    }}
-                  >
-                    {sugestao}
-                  </SugestaoItem>
-                ))}
-              </SugestoesLista>
-            )}
+            <Select value={versao} onChange={e => setVersao(e.target.value)}>
+              <option value="">Selecione</option>
+              {sugestoesVersao.map((v, index) => (
+                <option key={index} value={v}>{v}</option>
+              ))}
+            </Select>
 
           </InputGroup>
           <InputGroup style={{ flex: 1 }}>
@@ -392,7 +307,7 @@ const kmValido = quilometragemLimpa !== '' && !isNaN(Number(quilometragemLimpa))
             <Input
               value={quilometragem}
               onChange={e => setQuilometragem(e.target.value)}
-              placeholder="Quilometragem"
+              placeholder="Digite a quilometragem"
             />
           </InputGroup>
           <InputGroup>
