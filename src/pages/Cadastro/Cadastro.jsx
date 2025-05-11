@@ -17,8 +17,8 @@ export default function Cadastro() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmacaoSenha, setConfirmacaoSenha] = useState('');
-    
-    const navigate = useNavigate(); 
+
+    const navigate = useNavigate();
 
     const submeterFormulario = (evento) => {
         evento.preventDefault();
@@ -31,7 +31,8 @@ export default function Cadastro() {
         const usuario = {
             username,
             email,
-            password
+            password,
+            roles: ["ADMIN"]  // REVER ESSE TRECHO DO CODIGO //////////////////////////////////////////////////////
         };
 
         axios.post("http://localhost:8080/auth/register", usuario)
@@ -66,38 +67,38 @@ export default function Cadastro() {
 
                         <div className="campo">
                             <label>Nome completo</label>
-                            <input 
+                            <input
                                 type="text"
                                 placeholder="Nome completo"
                                 value={username}
-                                onChange={(evento) => setUsername(evento.target.value)} 
+                                onChange={(evento) => setUsername(evento.target.value)}
                             />
                         </div>
                         <div className="campo">
                             <label>Email</label>
-                            <input 
+                            <input
                                 type="email"
                                 placeholder="email@email.com"
                                 value={email}
-                                onChange={(evento) => setEmail(evento.target.value)} 
+                                onChange={(evento) => setEmail(evento.target.value)}
                             />
                         </div>
                         <div className="campo">
                             <label>Senha</label>
-                            <input 
+                            <input
                                 type="password"
                                 placeholder="Senha"
                                 value={password}
-                                onChange={(evento) => setPassword(evento.target.value)} 
+                                onChange={(evento) => setPassword(evento.target.value)}
                             />
                         </div>
                         <div className="campo">
                             <label>Confirmação de Senha</label>
-                            <input 
+                            <input
                                 type="password"
                                 placeholder="Confirmação de senha"
                                 value={confirmacaoSenha}
-                                onChange={(evento) => setConfirmacaoSenha(evento.target.value)} 
+                                onChange={(evento) => setConfirmacaoSenha(evento.target.value)}
                             />
                         </div>
 
@@ -106,8 +107,8 @@ export default function Cadastro() {
                             <a href="#"> Política de Privacidade ConnectMotors</a>
                         </p>
 
-                        <button 
-                            type="submit" 
+                        <button
+                            type="submit"
                             onClick={submeterFormulario}
                             disabled={!username || !email || !password || !confirmacaoSenha}
                         >
