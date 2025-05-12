@@ -5,28 +5,32 @@ export default function ListagemVeiculos({ veiculos = [] }) {
   return (
     <ContainerBase>
       <ListaCards>
-        {veiculos.map((veiculo, index) => (
-          <li key={index}>
-            <CardAnuncio
-              id={veiculo.id}
-              nomeVeiculo={veiculo.nomeVeiculo}
-              descricao={veiculo.descricao}
-              valor={veiculo.valor}
-              anoFabricacao={veiculo.anoFabricacao}
-              anoModelo={veiculo.anoModelo}
-              km={veiculo.km}
-              cidade={veiculo.cidade}
-              estado={veiculo.estado}
-              fabricante={veiculo.fabricante}
-              motor={veiculo.motor}
-              versao={veiculo.versao}
-              combustivel={veiculo.combustivel}
-              fotoPrincipal={veiculo.fotoPrincipal}
-              fotoSecundaria={veiculo.fotoSecundaria}
-            />
-          </li>
-        ))}
+        {veiculos.map((veiculo, index) => {
+          if (!veiculo.carro && !veiculo.moto) return null;
+          const isCarro = !!veiculo.carro;
+          const dados = isCarro ? veiculo.carro : veiculo.moto;
+
+          return (
+            <li key={index}>
+              <CardAnuncio
+                id={veiculo.id}
+                nomeVeiculo={dados?.modelo?.nome}
+                fabricante={dados?.marca?.nome}
+                valor={Number(veiculo.preco)}
+                anoFabricacao={dados?.anoFabricacao}
+                anoModelo={dados?.anoModelo}
+                km={veiculo.quilometragem}
+                cidade={veiculo.localidade}
+                estado={veiculo.uf}
+                motor={dados?.motor}
+                versao={dados?.versao}
+                combustivel={dados?.combustivel}
+                fotoPrincipal={`http://localhost:8080${veiculo.imagensPaths?.[0] || ""}`}
+              />
+            </li>
+          );
+        })}
       </ListaCards>
-      </ContainerBase>
+    </ContainerBase>
   );
 }

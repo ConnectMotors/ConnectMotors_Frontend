@@ -30,7 +30,7 @@ function Header() {
     {
       title: "Vender",
       dropdown: [
-        { label: "Inserir anúncio", link: "/" },
+        { label: "Inserir anúncio", link: "/anuncio" },
         { label: "Gerenciar meu anúncio", link: "/" }
       ]
     },
@@ -91,9 +91,25 @@ function Header() {
               {activeDropdown === item.title && (
                 <Dropdown>
                   {item.dropdown.map((subItem, subIndex) => (
-                    <DropdownItem as={Link} to={subItem.link} key={subIndex}>
-                      {subItem.label}
-                    </DropdownItem>
+                    subItem.link === "/anuncio" ? (
+                      <DropdownItem
+                        as="button"
+                        onClick={() => {
+                          if (usuarioLogado) {
+                            window.location.href = "/anuncio";
+                          } else {
+                            window.location.href = "/auth/login";
+                          }
+                        }}
+                        key={subIndex}
+                      >
+                        {subItem.label}
+                      </DropdownItem>
+                    ) : (
+                      <DropdownItem as={Link} to={subItem.link} key={subIndex}>
+                        {subItem.label}
+                      </DropdownItem>
+                    )
                   ))}
                 </Dropdown>
               )}
