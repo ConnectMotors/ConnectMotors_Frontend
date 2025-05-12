@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useNavigate } from 'react-router-dom';
 import { useFiltros } from "../../context/FiltrosContext";
 import Lupa from './assets/lupaPesquisa.svg';
@@ -20,25 +20,25 @@ import {
 } from './BarraDePesquisa.styles';
 
 export default function BarraDePesquisa() {
-    const [veiculos, setVeiculos] = useState([]);
     const navigate = useNavigate();
 
-    const {
-        textoPesquisa, setTextoPesquisa,
-        textoLoc, categoriaSelecionada,
-        precoMin, precoMax,
-        anoMin, anoMax,
-        setResultadosFiltrados,
-        setBuscaEfetuada,
-        mostrarFiltros, setMostrarFiltros
-    } = useFiltros();
+const {
+  textoPesquisa, setTextoPesquisa,
+  textoLoc, categoriaSelecionada,
+  precoMin, precoMax,
+  anoMin, anoMax,
+  mostrarFiltros, setMostrarFiltros,
+  tipoSelecionado,
+  quilometragemMin,
+  quilometragemMax
+} = useFiltros();
 
     const categorias = [
-        { nome: 'Hatch', icone: HatchIcone },
-        { nome: 'Sedan', icone: SedanIcone },
-        { nome: 'Suv', icone: SuvIcone },
-        { nome: 'Picape', icone: PicapeIcone },
-        { nome: 'Moto', icone: MotoIcone },
+        { nome: 'HATCH', icone: HatchIcone },
+        { nome: 'SEDAN', icone: SedanIcone },
+        { nome: 'SUV', icone: SuvIcone },
+        { nome: 'PICAPE', icone: PicapeIcone },
+        { nome: 'MOTO', icone: MotoIcone },
     ];
 
     const faixasPreco = [
@@ -50,51 +50,38 @@ export default function BarraDePesquisa() {
         "2000", "2005", "2010", "2012", "2015", "2018", "2020", "2022", "2024"
     ];
 
-    useEffect(() => {
-        fetch('/Data/veiculos_exemplo.json')
-            .then((response) => response.json())
-            .then((data) => setVeiculos(data))
-            .catch((error) => {
-                console.error("Erro ao carregar veículos:", error);
-            });
-    }, []);
-
-    const lidarAplicarFiltros = () => {
-        const filtrosSeguros = {
-            textoPesquisa: textoPesquisa || "",
-            textoLoc: textoLoc || "",
-            categoriaSelecionada: categoriaSelecionada || "",
-            precoMin: parseInt((precoMin || "0").replace(/\D/g, '')) || 0,
-            precoMax: parseInt((precoMax || "999999999").replace(/\D/g, '')) || 999999999,
-            anoMin: parseInt(anoMin) || 1900,
-            anoMax: parseInt(anoMax) || 2100
-        };
-
-        const resultados = veiculos.filter((veiculo) => {
-            const preco = veiculo.valor;
-            const ano = veiculo.anoFabricacao;
-            const nomeVeiculo = `${veiculo.fabricante} ${veiculo.nomeVeiculo}`.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-            const nomeFiltro = filtrosSeguros.textoPesquisa.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-            const localizacaoVeiculo = `${veiculo.cidade} ${veiculo.estado}`.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-            const localizacaoFiltro = filtrosSeguros.textoLoc.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-
-            return (
-                nomeVeiculo.includes(nomeFiltro) &&
-                localizacaoVeiculo.includes(localizacaoFiltro) &&
-                preco >= filtrosSeguros.precoMin &&
-                preco <= filtrosSeguros.precoMax &&
-                ano >= filtrosSeguros.anoMin &&
-                ano <= filtrosSeguros.anoMax &&
-                (!filtrosSeguros.categoriaSelecionada || veiculo.categoria.toLowerCase() === filtrosSeguros.categoriaSelecionada.toLowerCase())
-            );
-        });
-
-        setResultadosFiltrados(resultados);
-        setBuscaEfetuada(true);
-        requestAnimationFrame(() => {
-            navigate('/comprar');
-        });
+    const redirecionarComFiltros = async () => {
+    const filtrosSeguros = {
+        textoPesquisa: textoPesquisa || "",
+        textoLoc: textoLoc || "",
+        categoriaSelecionada: categoriaSelecionada || "",
+        tipoSelecionado: tipoSelecionado || "",
+        precoMin: parseInt((precoMin || "0").replace(/\D/g, '')) || 0,
+        precoMax: parseInt((precoMax || "999999999").replace(/\D/g, '')) || 999999999,
+        quilometragemMin: quilometragemMin || "",
+        quilometragemMax: quilometragemMax || "",
+        anoMin: parseInt(anoMin) || 1900,
+        anoMax: parseInt(anoMax) || 2100
     };
+
+    const params = new URLSearchParams();
+    if (filtrosSeguros.textoPesquisa?.trim()) params.append("modelo", filtrosSeguros.textoPesquisa);
+    if (filtrosSeguros.tipoSelecionado?.trim()) params.append("tipoVeiculo", filtrosSeguros.tipoSelecionado);
+    if (filtrosSeguros.categoriaSelecionada?.trim()) params.append("carroceria", filtrosSeguros.categoriaSelecionada);
+    if (filtrosSeguros.precoMin?.toString().trim()) params.append("precoMin", filtrosSeguros.precoMin);
+    if (filtrosSeguros.precoMax?.toString().trim()) params.append("precoMax", filtrosSeguros.precoMax);
+    if (filtrosSeguros.quilometragemMax?.toString().trim()) params.append("quilometragemMax", filtrosSeguros.quilometragemMax);
+    if (filtrosSeguros.anoMax?.toString().trim()) params.append("anoModelo", filtrosSeguros.anoMax);
+
+    try {
+        const response = await fetch(`http://localhost:8080/anuncios/filtros?${params.toString()}`);
+        if (!response.ok) throw new Error(`Erro ao buscar: ${response.status}`);
+        const data = await response.json();
+        navigate(`/comprar?${params.toString()}`); // <-- alterado aqui
+    } catch (error) {
+        console.error("Erro ao buscar veículos no backend:", error);
+    }
+};
 
     return (
         <Wrapper>
@@ -111,9 +98,8 @@ export default function BarraDePesquisa() {
                             onKeyDown={(e) => {
                                 if (e.key === 'Enter') {
                                     e.preventDefault();
-                                    if (textoPesquisa.trim() === "") return;
-                                    if (!mostrarFiltros) {
-                                        lidarAplicarFiltros();
+                                    if (textoPesquisa.trim() !== "") {
+                                        redirecionarComFiltros();
                                     }
                                 }
                             }}
@@ -133,7 +119,7 @@ export default function BarraDePesquisa() {
                         categorias={categorias}
                         faixasPreco={faixasPreco}
                         faixasAno={faixasAno}
-                        aplicarFiltros={lidarAplicarFiltros}
+                        aplicarFiltros={redirecionarComFiltros}
                     />
                 </div>
             )}

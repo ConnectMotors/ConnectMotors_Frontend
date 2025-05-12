@@ -22,7 +22,7 @@ export default function Home(){
         <div>
           <ContainerBanner>
             <Banner src={banner} alt="" />
-            <BarraDePesquisa />  
+            <BarraDePesquisa  /> 
           </ContainerBanner>          
             <OfertaDestaque veiculos={veiculos} />
             <EncontrarVeiculo />
