@@ -83,7 +83,7 @@ export default function Comprar() {
           backgroundColor="var(--azul-4)"
           hoverBackgroundColor="var(--azul-3)"
         >
-          ← Voltar para Home
+          Voltar para Home
         </BotaoVoltar>
       </BotaoVoltarContainer>
     </ContainerComprar>

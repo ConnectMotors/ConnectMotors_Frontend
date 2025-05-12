@@ -53,7 +53,7 @@ const CloseButton = styled.button`
 
 const UserInfo = styled.div`
  display: flex;
-  align-items: center;
+  justify-content: center;
   gap: 10px; // espaço entre o ícone e o nome
   padding: 1rem;
 `;
@@ -75,7 +75,6 @@ const UserName = styled.h3`
   font-size: 1.2rem;
   margin: 0;
   font-weight: 600;
- 
 `;
 
 const UserEmail = styled.p`

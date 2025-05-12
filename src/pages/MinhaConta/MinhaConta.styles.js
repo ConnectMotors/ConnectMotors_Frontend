@@ -66,17 +66,6 @@ export const Input = styled.input`
   }
 `;
 
-export const CheckboxWrapper = styled.div`
-  margin-top: 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-
-  span {
-    font-size: 13px;
-    color: #333;
-  }
-`;
 
 export const Botao = styled.button`
   background-color: var(--azul-4);
@@ -88,10 +77,14 @@ export const Botao = styled.button`
   font-weight: 600;
   cursor: pointer;
   transition: background 0.3s;
-
   &:hover {
     background-color: #1e45c4;
   }
+`;
+export const BotaoWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+ 
 `;
 
 

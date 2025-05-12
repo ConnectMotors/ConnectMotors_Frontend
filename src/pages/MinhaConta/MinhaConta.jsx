@@ -11,7 +11,7 @@ import {
   Botao,
   Coluna,
   Linha,
-  CheckboxWrapper
+ BotaoWrapper
 } from './MinhaConta.styles';
 
 export default function MinhaConta() {
@@ -72,7 +72,7 @@ useEffect(() => {
 
   const handleLogout = () => {
     sessionStorage.removeItem('token');
-    window.location.href = '/login';
+    window.location.href = '/';
   };
 
   return (
@@ -145,18 +145,10 @@ useEffect(() => {
                 <Label>Telefone</Label>
                 <Input name="telefone" value={usuario.telefone} onChange={handleChange} />
               </Campo>
-              <CheckboxWrapper>
-                <input
-                  type="checkbox"
-                  name="exibirTelefone"
-                  checked={usuario.exibirTelefone}
-                  onChange={handleChange}
-                />
-                <span>Exibir meu telefone no anúncio</span>
-              </CheckboxWrapper>
             </Secao>
-
+            <BotaoWrapper>
             <Botao onClick={salvarAlteracoes}>Salvar alterações</Botao>
+            </BotaoWrapper>
           </Coluna>
         </Linha>
       </Container>
