@@ -1,14 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import BotaoLimparFiltros from "../BotaoLimparFiltros/BotaoLimparFiltros";
 import { useNavigate } from "react-router-dom";
 import {
   ContainerBase,
-
   LinhaTipos,
   LinhaFiltros,
   BotaoTipo,
   InputLocalizacao,
-  SugestoesLista,
   Dropdown,
   CampoBusca,
   InputBusca,
@@ -21,13 +19,9 @@ import { useFiltros } from "../../context/FiltrosContext";
 
 export default function FiltragemComprar() {
   const navigate = useNavigate();
-  const [sugestoes, setSugestoes] = useState([]);
-  const [textoLocalDigitado, setTextoLocalDigitado] = useState('');
-  const [textoBuscaDigitado, setTextoBuscaDigitado] = useState('');
-  const [locaisDisponiveis, setLocaisDisponiveis] = useState([]);
+  const [textoBuscaDigitado, setTextoBuscaDigitado] = useState("");
 
   const {
-    veiculosOriginais,
     textoPesquisa, setTextoPesquisa,
     textoLoc, setTextoLoc,
     tipoSelecionado, setTipoSelecionado,
@@ -35,88 +29,24 @@ export default function FiltragemComprar() {
     quilometragemMax, setQuilometragemMax,
     anoMax, setAnoMax,
     ordenacao, setOrdenacao,
-    aplicarFiltros,
-    limparFiltros,
+    limparFiltros
   } = useFiltros();
 
   const tiposVeiculo = ["Carro", "Moto"];
-
-
-  useEffect(() => {
-    if (veiculosOriginais.length > 0) {
-      const locaisUnicos = [...new Set(
-        veiculosOriginais.map(v => `${v.cidade} - ${v.estado}`)
-      )];
-      setLocaisDisponiveis(locaisUnicos);
-    }
-  }, [veiculosOriginais]);
-
-  useEffect(() => {
-    if (textoLocalDigitado.length > 0) {
-      const filtradas = locaisDisponiveis.filter((loc) =>
-        loc.toLowerCase().includes(textoLocalDigitado.toLowerCase())
-      );
-      setSugestoes(filtradas);
-    } else {
-      setSugestoes([]);
-    }
-  }, [textoLocalDigitado, locaisDisponiveis]);
-
-  const handleInputChange = (setter) => (e) => {
-    setter(e.target.value);
-  };
-
-  const handleInputChangeAndFilter = (setter) => (e) => {
-    setter(e.target.value);
-    aplicarFiltros();
-  };
-
-  const handleLocalizacaoChange = (e) => {
-    const valor = e.target.value;
-    setTextoLocalDigitado(valor);
-  };
-
-  const handleSugestaoClick = (local) => {
-    setTextoLoc(local);
-    setTextoLocalDigitado('');
-    setSugestoes([]);
-    setTimeout(() => {
-      aplicarFiltros();
-    }, 0);
-  };
-  const handleEnterPressLocalizacao = (e) => {
-    if (e.key === "Enter" && sugestoes.length > 0) {
-      e.preventDefault();
-      const localSelecionado = sugestoes[0];
-      setTextoLocalDigitado(localSelecionado);
-      setTextoLoc(localSelecionado);
-      setSugestoes([]);
-      setTimeout(() => {
-        aplicarFiltros();
-      }, 0);
-    }
-  };
-
-  const handleBuscaChange = (e) => {
-    setTextoBuscaDigitado(e.target.value);
-  };
 
   const handleEnterPressBusca = (e) => {
     if (e.key === "Enter") {
       e.preventDefault();
       setTextoPesquisa(textoBuscaDigitado);
-      aplicarFiltros();
     }
   };
 
   const handleBuscaClick = () => {
     setTextoPesquisa(textoBuscaDigitado);
-    aplicarFiltros();
   };
 
   return (
     <ContainerBase>
-    
       <LinhaTipos>
         <span>Filtre por :</span>
         <div className="botoes-tipo">
@@ -126,7 +56,6 @@ export default function FiltragemComprar() {
               $selecionado={tipoSelecionado === tipo}
               onClick={() => {
                 setTipoSelecionado(tipo);
-                aplicarFiltros();
                 navigate(`/comprar/${tipo.toLowerCase()}`);
               }}
             >
@@ -142,30 +71,16 @@ export default function FiltragemComprar() {
           <InputLocalizacao
             type="text"
             placeholder="Digite a localização"
-            value={textoLocalDigitado.length > 0 ? textoLocalDigitado : textoLoc}
-            onChange={handleLocalizacaoChange}
-            onKeyDown={handleEnterPressLocalizacao}
+            value={textoLoc}
+            onChange={(e) => setTextoLoc(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") e.preventDefault();
+            }}
           />
-          {textoLocalDigitado.length > 0 && (
-            <SugestoesLista>
-              {sugestoes.length > 0 ? (
-                sugestoes.map((local, index) => (
-                  <li key={index} onClick={() => handleSugestaoClick(local)}>
-                    {local}
-                  </li>
-                ))
-              ) : (
-                <li style={{ cursor: "default", color: "#999" }}>
-                  Nenhuma localização encontrada
-                </li>
-              )}
-            </SugestoesLista>
-          )}
         </div>
 
-
-        {/* Preço Máximo */}
-        <Dropdown value={precoMax} onChange={handleInputChangeAndFilter(setPrecoMax)}>
+        {/* Dropdowns */}
+        <Dropdown value={precoMax} onChange={(e) => setPrecoMax(e.target.value)}>
           <option value="">Preço</option>
           <option value="10000">até R$ 10.000</option>
           <option value="20000">até R$ 20.000</option>
@@ -179,8 +94,7 @@ export default function FiltragemComprar() {
           <option value="500000">até R$ 500.000</option>
         </Dropdown>
 
-        {/* Quilometragem Máxima */}
-        <Dropdown value={quilometragemMax} onChange={handleInputChangeAndFilter(setQuilometragemMax)}>
+        <Dropdown value={quilometragemMax} onChange={(e) => setQuilometragemMax(e.target.value)}>
           <option value="">Quilometragem</option>
           <option value="10000">até 10.000 km</option>
           <option value="20000">até 20.000 km</option>
@@ -192,8 +106,7 @@ export default function FiltragemComprar() {
           <option value="200000">até 200.000 km</option>
         </Dropdown>
 
-        {/* Ano Máximo */}
-        <Dropdown value={anoMax} onChange={handleInputChangeAndFilter(setAnoMax)}>
+        <Dropdown value={anoMax} onChange={(e) => setAnoMax(e.target.value)}>
           <option value="">Ano</option>
           <option value="2025">até 2025</option>
           <option value="2024">até 2024</option>
@@ -209,8 +122,7 @@ export default function FiltragemComprar() {
           <option value="2000">até 2000</option>
         </Dropdown>
 
-        {/* Ordenação */}
-        <Dropdown value={ordenacao} onChange={handleInputChangeAndFilter(setOrdenacao)}>
+        <Dropdown value={ordenacao} onChange={(e) => setOrdenacao(e.target.value)}>
           <option value="">Ordenar por</option>
           <option value="precoDesc">Maior preço</option>
           <option value="precoAsc">Menor preço</option>
@@ -222,24 +134,27 @@ export default function FiltragemComprar() {
 
         {/* Campo de busca */}
         <CampoBusca>
-          <LupaIcone src={Lupa} alt="Buscar" onClick={handleBuscaClick} style={{ cursor: "pointer" }} />
+          <LupaIcone
+            src={Lupa}
+            alt="Buscar"
+            onClick={handleBuscaClick}
+            style={{ cursor: "pointer" }}
+          />
           <InputBusca
             type="text"
             placeholder="Pesquise por veículo, marca, modelo..."
             value={textoBuscaDigitado}
-            onChange={handleBuscaChange}
+            onChange={(e) => setTextoBuscaDigitado(e.target.value)}
             onKeyDown={handleEnterPressBusca}
           />
         </CampoBusca>
-
       </LinhaFiltros>
+
       <AreaBotaoLimpar>
         <BotaoLimparFiltros onClick={limparFiltros}>
           Limpar filtros
         </BotaoLimparFiltros>
       </AreaBotaoLimpar>
-    
     </ContainerBase>
-
   );
 }

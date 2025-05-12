@@ -29,10 +29,13 @@ export default function Filtragem({ categorias, faixasPreco, faixasAno, aplicarF
     } = useFiltros();
 
     const aplicar = () => {
-        aplicarFiltros();
+        aplicarFiltros(); // apenas dispara a requisição para o backend
         setMostrarFiltros(false);
     };
-
+    const handlePrecoChange = (value) => {
+        const valorLimpo = value.replace(/\D/g, "");
+        setPrecoMax(valorLimpo);
+    };
     return (
         <FiltrosWrapper>
             <FiltroLocalizacao>
@@ -76,7 +79,10 @@ export default function Filtragem({ categorias, faixasPreco, faixasAno, aplicarF
                             <option key={index} value={preco}>{preco}</option>
                         ))}
                     </Select>
-                    <Select value={precoMax} onChange={(e) => setPrecoMax(e.target.value)}>
+                    <Select
+                        value={precoMax}
+                        onChange={(e) => setPrecoMax(e.target.value.replace(/\D/g, ""))} // Aqui remove caracteres não numéricos
+                    >
                         <option value="">Até</option>
                         {faixasPreco.map((preco, index) => (
                             <option key={index} value={preco}>{preco}</option>
@@ -106,9 +112,7 @@ export default function Filtragem({ categorias, faixasPreco, faixasAno, aplicarF
             </FiltroAno>
 
             <Acoes>
-            <BotaoLimparFiltros onClick={limparFiltros}>
-  Limpar filtros
-</BotaoLimparFiltros>
+                <BotaoLimparFiltros onClick={limparFiltros}>Limpar filtros</BotaoLimparFiltros>
                 <div>
                     <BotaoCancelar
                         onClick={() => {
