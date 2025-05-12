@@ -2,7 +2,7 @@ import { StyledBotaoVoltar } from "./BotaoVoltar.styles";
 
 export default function BotaoVoltar({ 
   to = "/", 
-  children = "← Voltar", 
+  children = "Voltar", 
   color, 
   backgroundColor, 
   hoverBackgroundColor,

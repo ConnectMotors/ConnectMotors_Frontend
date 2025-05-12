@@ -38,7 +38,7 @@ export const LinhaTipos = styled.div`
 
 export const BotaoTipo = styled.button`
 
-  background-color: ${(props) => (props.$selecionado ? 'var(--azul-4)' : 'var(--cinza-4)')};
+  background-color: ${(props) => (props.$selecionado ? 'var(--azul-3)' : 'var(--cinza-4)')};
   color: var(--branco);
   border: none;
   padding: 8px 20px;
@@ -52,13 +52,10 @@ export const BotaoTipo = styled.button`
   justify-content: center;
   &:first-child {
    border-radius: 30px;
-
   }
-
   &:last-child {
    border-radius: 30px;
   }
-
   &:hover {
     background-color: ${(props) => (props.$selecionado ? 'var(--azul-3)' : 'var(--cinza-3)')};
   }
@@ -88,19 +85,18 @@ export const InputLocalizacao = styled.input`
   height: 38px;
   border-radius: 20px;
   padding: 0 16px;
-  background-color: var(--azul-4);
+  background-color: var(--cinza-3);
   color: var(--branco);
   font-size: 14px;
   border: none;
   width: 180px;
-
   &::placeholder {
     color: var(--cinza-1);
   }
 
   &:focus {
     outline: none;
-    background-color: var(--azul-4);
+    background-color: var(--cinza-4);
   }
 `;
 
@@ -108,7 +104,7 @@ export const SugestoesLista = styled.ul`
   position: absolute;
   top: 42px;
   width: 180px;
-  background: var(--azul-4);
+  background: var(--cinza-3);
   border-radius: 0 0 10px 10px;
   list-style: none;
   padding: 0;
@@ -123,7 +119,7 @@ export const SugestoesLista = styled.ul`
     transition: background 0.3s;
 
     &:hover {
-      background-color:var(--azul-3); 
+      background-color:var(--cinza-3); 
     }
   }
 `;
@@ -134,7 +130,7 @@ export const Dropdown = styled.select`
   font-weight: 600;
   font-size: 14px;
   color: var(--branco);
-  background-color: var(--azul-4);
+  background-color: var(--cinza-3);
   border: none;
   appearance: none;
   background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
@@ -153,7 +149,7 @@ export const Dropdown = styled.select`
 
   &:focus {
     outline: none;
-    background-color: var(--azul-4);
+    background-color: var(--cinza-4);
   }
 `;
 

@@ -4,6 +4,7 @@ import Login from "../pages/Login/Login";
 import Cadastro from "../pages/Cadastro/Cadastro";
 import Comprar from "../pages/Comprar/Comprar";
 import AnuncioDetalhado from "../pages/AnuncioDetalhado/AnuncioDetalhado";
+import MinhaConta from "../pages/MinhaConta/MinhaConta";
 import VenderIntroducao from "../pages/InserirAnuncio/VenderIntroducao";
 import DadosVeiculo from "../pages/InserirAnuncio/DadosVeiculo";
 import DadosAnuncio from "../pages/InserirAnuncio/DadosAnuncio";
@@ -15,6 +16,7 @@ function AppRoutes() {
       <Route path="/" element={<Home />} />
       <Route path="/auth/login" element={<Login />} />
       <Route path="/auth/register" element={<Cadastro />} />
+      <Route path="/minha-conta" element={<MinhaConta />} />
       <Route path="/comprar" element={<Comprar />} />
       <Route path="/comprar/:tipo" element={<Comprar />} /> 
       <Route path="/anuncio/:id" element={<AnuncioDetalhado />} />
